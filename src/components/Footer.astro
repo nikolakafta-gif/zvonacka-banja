@@ -1,0 +1,151 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo">The Herbal Alchemist</a>
+        <p class="footer__tagline">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rooted in nature, guided by tradition.
+        </p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__col">
+          <h3 class="footer__col-title">Navigate</h3>
+          <ul class="footer__list">
+            <li><a href="#about" class="footer__link">About</a></li>
+            <li><a href="#services" class="footer__link">Services</a></li>
+            <li><a href="#testimonials" class="footer__link">Testimonials</a></li>
+            <li><a href="#contact" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title">Services</h3>
+          <ul class="footer__list">
+            <li><a href="#" class="footer__link">Herbal Consultations</a></li>
+            <li><a href="#" class="footer__link">Custom Formulations</a></li>
+            <li><a href="#" class="footer__link">Wellness Programs</a></li>
+            <li><a href="#" class="footer__link">Seasonal Remedies</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title">Connect</h3>
+          <ul class="footer__list">
+            <li><a href="#" class="footer__link">Instagram</a></li>
+            <li><a href="#" class="footer__link">Facebook</a></li>
+            <li><a href="#" class="footer__link">Pinterest</a></li>
+            <li><a href="mailto:hello@herbalalchemist.com" class="footer__link">Email Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; {currentYear} The Herbal Alchemist. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    width: 100%;
+    background-color: var(--color-bg-deep);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4em;
+    padding-block: 4em;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .footer__logo {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--color-heading);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+  }
+
+  .footer__tagline {
+    font-size: 0.8125em;
+    color: var(--color-muted);
+    line-height: 1.7;
+    max-width: 20em;
+  }
+
+  .footer__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+  }
+
+  .footer__col-title {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-heading);
+    letter-spacing: var(--tracking-ui);
+    text-transform: uppercase;
+    margin-bottom: 1.25em;
+  }
+
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+  }
+
+  .footer__link {
+    font-size: 0.8125em;
+    color: var(--color-muted);
+    transition: color var(--transition-base);
+  }
+
+  .footer__link:hover {
+    color: var(--color-heading);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid var(--color-border);
+    padding-block: 2em;
+  }
+
+  .footer__copy {
+    font-size: 0.6875em;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 991px) {
+    .footer__top {
+      grid-template-columns: 1fr;
+      gap: 3em;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .footer__nav {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .footer__nav {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

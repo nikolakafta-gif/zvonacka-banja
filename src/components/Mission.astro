@@ -1,0 +1,96 @@
+---
+---
+
+<section class="mission">
+  <div class="mission__inner container">
+    <div class="mission__content">
+      <span class="eyebrow">Nourish Your Body</span>
+      <h2 class="mission__heading">Heal. Naturally.<br>Embrace Your Vitality.</h2>
+      <p class="mission__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p class="mission__text">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      </p>
+      <a href="#services" class="btn btn--outline mission__btn">Explore Natural Remedies</a>
+    </div>
+    <div class="mission__image">
+      <div class="mission__image-placeholder" role="img" aria-label="Herbal remedies preparation"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mission {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: var(--spacing-section);
+  }
+
+  .mission__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+    align-items: center;
+  }
+
+  .mission__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .mission__heading {
+    font-size: var(--text-h2);
+    line-height: 1.08;
+  }
+
+  .mission__text {
+    font-size: var(--text-body);
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+
+  .mission__btn {
+    margin-top: 0.5em;
+  }
+
+  .mission__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: var(--color-bg-header);
+    border-radius: var(--radius-sm);
+    background-image: url('/assets/images/mission.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media (max-width: 991px) {
+    .mission__inner {
+      gap: 2.5em;
+    }
+
+    .mission__heading {
+      font-size: 2.25em;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .mission__inner {
+      grid-template-columns: 1fr;
+      gap: 2em;
+    }
+
+    .mission__heading {
+      font-size: 2em;
+    }
+
+    .mission__image {
+      order: -1;
+    }
+
+    .mission__image-placeholder {
+      aspect-ratio: 16 / 9;
+    }
+  }
+</style>

@@ -1,0 +1,215 @@
+---
+---
+
+<header class="navbar" id="home">
+  <div class="navbar__inner container">
+    <a href="/" class="navbar__logo">Zvonačka Banja</a>
+    <nav class="navbar__nav" aria-label="Main navigation">
+      <ul class="navbar__list">
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <li><a href="#services" class="navbar__link">Services</a></li>
+        <li><a href="#testimonials" class="navbar__link">Testimonials</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn navbar__cta">Book a Consult</a>
+    <button class="navbar__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+    </button>
+  </div>
+
+  <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="navbar__mobile-inner">
+      <a href="#about" class="navbar__mobile-link">About</a>
+      <a href="#services" class="navbar__mobile-link">Services</a>
+      <a href="#testimonials" class="navbar__mobile-link">Testimonials</a>
+      <a href="#contact" class="navbar__mobile-link">Contact</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.navbar__toggle');
+  const menu = document.querySelector('.navbar__mobile-menu');
+  const mobileLinks = document.querySelectorAll('.navbar__mobile-link');
+
+  function openMenu() {
+    menu?.classList.add('is-open');
+    menu?.setAttribute('aria-hidden', 'false');
+    toggle?.classList.add('is-open');
+    toggle?.setAttribute('aria-expanded', 'true');
+    toggle?.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu?.classList.remove('is-open');
+    menu?.setAttribute('aria-hidden', 'true');
+    toggle?.classList.remove('is-open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    toggle?.setAttribute('aria-label', 'Open menu');
+    document.body.style.overflow = '';
+  }
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5em;
+  }
+
+  .navbar__logo {
+    font-family: var(--font-heading);
+    font-size: 1.25em;
+    font-weight: 500;
+    color: var(--color-heading);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .navbar__nav {
+    display: flex;
+  }
+
+  .navbar__list {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .navbar__link {
+    font-size: var(--text-small);
+    font-weight: 500;
+    letter-spacing: var(--tracking-ui);
+    text-transform: uppercase;
+    color: var(--color-muted);
+    transition: color var(--transition-base);
+  }
+
+  .navbar__link:hover {
+    color: var(--color-heading);
+  }
+
+  .navbar__cta {
+    font-size: var(--text-small);
+  }
+
+  .navbar__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+    z-index: 101;
+  }
+
+  .navbar__toggle-bar {
+    display: block;
+    width: 1.5em;
+    height: 2px;
+    background-color: var(--color-heading);
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    transform-origin: center;
+  }
+
+  .navbar__toggle.is-open .navbar__toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar__toggle.is-open .navbar__toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__toggle.is-open .navbar__toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .navbar__mobile-menu {
+    display: none;
+  }
+
+  @media (max-width: 991px) {
+    .navbar__nav,
+    .navbar__cta {
+      display: none;
+    }
+
+    .navbar__toggle {
+      display: flex;
+    }
+
+    .navbar__mobile-menu {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      z-index: 99;
+      background-color: var(--color-bg-header);
+      transform: translateX(-100%);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .navbar__mobile-menu.is-open {
+      transform: translateX(0);
+    }
+
+    .navbar__mobile-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      padding-bottom: 10vh;
+    }
+
+    .navbar__mobile-link {
+      font-family: var(--font-heading);
+      font-size: 2.5em;
+      font-weight: 500;
+      color: var(--color-heading);
+      letter-spacing: var(--tracking-display);
+      text-transform: uppercase;
+      padding: 0.3em 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .navbar__mobile-link:hover {
+      opacity: 0.7;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .navbar__mobile-link {
+      font-size: 2em;
+    }
+  }
+</style>

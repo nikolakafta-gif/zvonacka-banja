@@ -1,0 +1,134 @@
+---
+const services = [
+  {
+    title: "Herbal Consultations",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Custom Formulations",
+    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    title: "Wellness Programs",
+    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.",
+  },
+  {
+    title: "Seasonal Remedies",
+    description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+];
+---
+
+<section class="services" id="services">
+  <div class="services__inner container">
+    <div class="services__header">
+      <span class="eyebrow">What We Offer</span>
+      <h2 class="services__heading">Ancient Wisdom,<br>Modern Healing</h2>
+      <p class="services__intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+      </p>
+    </div>
+    <div class="services__grid">
+      {services.map((service, i) => (
+        <div class="services__card">
+          <span class="services__number">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="services__card-title">{service.title}</h3>
+          <p class="services__card-text">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    width: 100%;
+    background-color: var(--color-bg-deep);
+    padding-block: var(--spacing-section);
+  }
+
+  .services__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+  }
+
+  .services__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 32em;
+  }
+
+  .services__heading {
+    font-size: var(--text-h2);
+    line-height: 1.08;
+  }
+
+  .services__intro {
+    font-size: var(--text-body);
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+  }
+
+  .services__card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 2em 1.75em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    transition: background-color var(--transition-base);
+  }
+
+  .services__card:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .services__number {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    font-weight: 400;
+    color: var(--color-muted);
+    line-height: 1;
+  }
+
+  .services__card-title {
+    font-size: var(--text-h5);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .services__card-text {
+    font-size: 0.8125em;
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 991px) {
+    .services__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services__heading {
+      font-size: 2.25em;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .services__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .services__heading {
+      font-size: 2em;
+    }
+  }
+</style>
