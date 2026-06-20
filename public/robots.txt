@@ -25,4 +25,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://zvonackabanja.net/sitemap-index.xml
+Sitemap: https://www.zvonackabanja.net/sitemap-index.xml

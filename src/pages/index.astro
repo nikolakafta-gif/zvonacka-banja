@@ -11,13 +11,34 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  extraSchemas={[{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" }
-    ]
-  }]}
+  extraSchemas={[
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Zvonačka Banja",
+      "url": "https://www.zvonackabanja.net/",
+      "logo": "https://www.zvonackabanja.net/favicon.svg",
+      "description": "Lekovita vazdušna banja u jugoistočnoj Srbiji na 670 m nadmorske visine. Termomineralna voda temperature 28°C, olimpijski bazeni, netaknuta priroda.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zvonačka Banja",
+        "addressRegion": "Pirotski okrug",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.1167,
+        "longitude": 22.6333
+      }
+    }
+  ]}
 >
   <Navbar />
   <main id="main-content">
