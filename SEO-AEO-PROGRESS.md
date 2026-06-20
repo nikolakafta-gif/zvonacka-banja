@@ -4,13 +4,13 @@
 **Site:** https://zvonackabanja.net
 **About:** Zvonačka Banja — banjski i rekreativni kompleks u jugoistočnoj Srbiji (termomineralni bazeni, kanjon Jerme, manastiri, priroda)
 **Started:** 2026-06-20
-**Current phase:** 02
+**Current phase:** 03
 
 ## Phases
 
 - [x] 00 — Foundation Audit ✅ (2026-06-20)
 - [x] 01 — Technical SEO ✅ (2026-06-20)
-- [ ] 02 — Keyword Strategy
+- [x] 02 — Keyword Strategy ✅ (2026-06-20)
 - [ ] 03 — AEO Content
 - [ ] 04 — Link Building Foundation
 - [ ] 05 — Content Production
@@ -126,3 +126,38 @@
 **Pending (needs user action):**
 - ⏳ Core Web Vitals — PageSpeed API rate-limited, test manually at pagespeed.web.dev
 - ⏳ Google Search Console — user needs to connect and share data
+
+---
+
+## Phase 02 — Keyword Strategy Results
+
+**Deliverables created:**
+- ✅ `KEYWORD-STRATEGY.md` — full keyword strategy document
+
+**Seed Keywords (30):**
+- 5 branded (zvonačka banja + modifiers)
+- 8 informational — banja/zdravlje (banje za reumu, lekovita voda, vazdušna banja...)
+- 8 informational — priroda/atrakcije (kanjon Jerme, Poganovo, Asenovo Kale, Vetrena Dupka...)
+- 5 commercial — smeštaj/putovanje (vikend izlet, privatni smeštaj, apartmani...)
+- 4 question-based / AEO priority (gde, kako, da li, koje bolesti)
+
+**Keyword Clusters (8):**
+1. "Zvonačka Banja — Kompletni Vodič" (PILLAR) — branded + informational
+2. "Lekovita voda i zdravlje" — medical tourism
+3. "Kanjon reke Jerme" — nature tourism
+4. "Manastir Poganovo i manastiri" — cultural tourism
+5. "Bazeni Zvonačka Banja" — sports/recreation
+6. "Asenovo Kale i prirodne atrakcije" — adventure tourism
+7. "Smeštaj i cene" — commercial
+8. "Vikend izlet u banju" — trip planning
+
+**12-Month Content Calendar:** 16 articles planned (Jul 2026 – Jun 2027)
+
+**Content Mapping:**
+- All 4 subpages mapped to clusters but flagged as thin content (~200 words each)
+- **Priority action:** Expand existing 4 subpages before creating new content
+- Competitor content is 1000-3000 words vs our 200
+
+**Content Gaps Identified:**
+- ❌ No content on: istorija banje, hemijski sastav vode, smeštaj/cene, kako doći
+- ✅ Our unique advantages: dedicated attraction pages (competitors don't have), schema markup, modern design

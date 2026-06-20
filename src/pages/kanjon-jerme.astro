@@ -27,15 +27,63 @@ import Footer from "../components/Footer.astro";
       "url": "https://www.zvonackabanja.net/"
     }
   }}
-  extraSchemas={[{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
-      { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
-      { "@type": "ListItem", "position": 3, "name": "Kanjon reke Jerme", "item": "https://www.zvonackabanja.net/kanjon-jerme/" }
-    ]
-  }]}
+  extraSchemas={[
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
+        { "@type": "ListItem", "position": 3, "name": "Kanjon reke Jerme", "item": "https://www.zvonackabanja.net/kanjon-jerme/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Gde se nalazi kanjon reke Jerme?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kanjon reke Jerme se nalazi u jugoistočnoj Srbiji, u Pirotskom okrugu, u neposrednoj blizini Zvonačke Banje. Proteže se duž toka reke Jerme koja izvire u Bugarskoj i uliva se u Nišavu." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako doći do kanjona reke Jerme?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Do kanjona se dolazi regionalnim putevima iz pravca Pirota (oko 30 km) ili Babušnice. Put prolazi direktno kroz kanjon, pružajući spektakularne poglede na stenovite litice i bistru reku." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koje aktivnosti su moguće u kanjonu Jerme?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kanjon nudi pešačenje i planinarenje stazama uz reku, fotografiju prirode, ribolov, posmatranje ptica (uključujući suri orao), i posetе obližnjim manastirima. U blizini su i bazeni sa termomineralnom vodom." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li je kanjon Jerme pogodan za jednodnevni izlet?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, kanjon je idealan za jednodnevni izlet iz Pirota ili Niša. Kombinujte posetu kanjonu sa kupanjem u bazenima Zvonačke Banje, obilaskom manastira Poganovo i penjanjem na Asenovo Kale." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko je dugačak kanjon reke Jerme?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kanjon reke Jerme se proteže na dužini od oko 20 km kroz jugoistočnu Srbiju. Najimpresivniji deo kanjona sa visokim stenovitim liticama nalazi se u blizini Zvonačke Banje i manastira Poganovo." }
+        },
+        {
+          "@type": "Question",
+          "name": "Šta mogu videti u kanjonu Jerme?",
+          "acceptedAnswer": { "@type": "Answer", "text": "U kanjonu možete videti visoke stenovite litice, bistru reku sa malim slapovima, bogatu vegetaciju, razne vrste ptica uključujući surog orla, i jedinstven pogled na netaknutu prirodu jugoistočne Srbije." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li postoje staze za pešačenje uz kanjon?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, uz kanjon reke Jerme postoje staze za pešačenje različitih težina. Staze vode kroz spektakularne predele i pružaju nezaboravne poglede na vertikalne litice i gustu vegetaciju. Postoje i staze zdravlja u sklopu Zvonačke Banje." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koje znamenitosti su u blizini kanjona?",
+          "acceptedAnswer": { "@type": "Answer", "text": "U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), manastir Poganovo iz 14. veka, greben Asenovo Kale (1032 m) sa gnezdima surih orlova, i pećina Vetrena Dupka sa 4 km kanala." }
+        }
+      ]
+    }
+  ]}
 >
   <Navbar />
   <main id="main-content">
@@ -57,16 +105,7 @@ import Footer from "../components/Footer.astro";
       <div class="attraction-content__inner container">
         <div class="attraction-content__text" data-fade-up>
           <p>
-            U neposrednoj blizini Zvonačke Banje nalazi se živopisna klisura reke Jerme. Do banje se dolazi regionalnim putevima iz pravca Pirota i Babušnice, dolinom reke Jerme. Sam put kroz kanjon je doživljaj za sebe.
-          </p>
-          <p>
-            Kanjon je poznat po stenovitim liticama, bistrim vodama i netaknutoj prirodi koja ga okružuje. Idealan je za pešačenje, fotografiju i uživanje u tišini daleko od gradske buke. Staze uz reku vode kroz spektakularne predele i pružaju nezaboravne poglede na vertikalne litice i gustu vegetaciju.
-          </p>
-          <p>
-            Netaknuta priroda koja okružuje banju prijatna je za šetnje i izlete. U blizini kanjona nalazi se i greben Asenovo Kale na nadmorskoj visini od 1032 m, jedino mesto u Srbiji gde se mogu videti gnezda surih orlova, kao i atraktivna pećina Vetrena Dupka sa kanalima dužine 4 km.
-          </p>
-          <p>
-            Postoje mogućnosti za lov, ribolov i planinarenje po Vlaškoj i Staroj planini. Gosti mogu posetiti i obližnje srednjovekovne manastire, od kojih je najpoznatiji manastir Poganovo iz 14. veka, kao i manastire Sukovo i Temska.
+            Kanjon reke Jerme je živopisna klisura u jugoistočnoj Srbiji koja se proteže na dužini od oko 20 km kroz Pirotski okrug. Sa visokim stenovitim liticama, bistrom vodom i netaknutom prirodom, kanjon je idealan za pešačenje, fotografiju i jednodnevne izlete. Nalazi se u neposrednoj blizini Zvonačke Banje.
           </p>
         </div>
         <div class="attraction-content__image" data-reveal>
@@ -75,6 +114,76 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </section>
+
+    <section class="attraction-details">
+      <div class="attraction-details__inner container">
+        <h2>Kako izgleda kanjon reke Jerme?</h2>
+        <p>
+          Kanjon reke Jerme je poznat po visokim stenovitim liticama koje se uzdižu iznad bistrog rečnog toka. Vertikalne stene su obrasle gustom vegetacijom, a reka meandrira kroz uske prolaze stvarajući spektakularne predele. Sam put kroz kanjon, bilo kolima ili pešice, pruža nezaboravne poglede na ovu netaknutu prirodu jugoistočne Srbije.
+        </p>
+
+        <h2>Koje aktivnosti su moguće u kanjonu?</h2>
+        <p>
+          Kanjon nudi raznovrsne aktivnosti za ljubitelje prirode. Staze za pešačenje uz reku vode kroz spektakularne predele — od laganih šetnji pogodnih za porodice do zahtevnijih planinarskih ruta. Kanjon je idealan za fotografiju prirode, posmatranje ptica (uključujući surog orla), i ribolov. U blizini su i staze za planinarenje po Vlaškoj i Staroj planini.
+        </p>
+
+        <h2>Kako doći do kanjona reke Jerme?</h2>
+        <p>
+          Do kanjona se dolazi regionalnim putevima iz pravca Pirota (udaljenost oko 30 km) ili Babušnice, dolinom reke Jerme. Put prolazi direktno kroz kanjon, pružajući spektakularne poglede na stenovite litice i bistru reku. Kanjon je pristupačan automobilom, a za pešačenje su dostupne obeležene staze.
+        </p>
+
+        <h2>Da li je kanjon pogodan za jednodnevni izlet?</h2>
+        <p>
+          Da, kanjon Jerme je idealan za jednodnevni izlet iz Pirota, Niša ili čak Beograda. Preporučeni plan za jedan dan: vožnja kroz kanjon, kupanje u <a href="/bazen-zvonacka-banja/">bazenima Zvonačke Banje</a> sa termomineralnom vodom, obilazak <a href="/manastir-poganovo/">manastira Poganovo</a>, i penjanje na <a href="/asenovo-kale/">Asenovo Kale</a> za panoramski pogled.
+        </p>
+
+        <h2>Šta još posetiti u okolini kanjona?</h2>
+        <p>
+          U neposrednoj blizini kanjona nalaze se bazeni Zvonačke Banje sa termomineralnom vodom temperature 28°C, manastir Poganovo iz 14. veka sa izuzetnim freskama, greben Asenovo Kale na 1032 m nadmorske visine (jedino mesto u Srbiji sa gnezdima surih orlova), i pećina Vetrena Dupka sa 4 km podzemnih kanala. Obližnji manastiri Sukovo i Temska dopunjuju kulturno-istorijsku ponudu.
+        </p>
+      </div>
+    </section>
+
+    <section class="attraction-faq">
+      <div class="attraction-faq__inner container">
+        <h2>Često postavljana pitanja o kanjonu reke Jerme</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Gde se nalazi kanjon reke Jerme?</summary>
+            <p>Kanjon reke Jerme se nalazi u jugoistočnoj Srbiji, u Pirotskom okrugu, u neposrednoj blizini Zvonačke Banje. Proteže se duž toka reke Jerme koja izvire u Bugarskoj i uliva se u Nišavu.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kako doći do kanjona reke Jerme?</summary>
+            <p>Do kanjona se dolazi regionalnim putevima iz pravca Pirota (oko 30 km) ili Babušnice. Put prolazi direktno kroz kanjon, pružajući spektakularne poglede na stenovite litice i bistru reku.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koje aktivnosti su moguće u kanjonu Jerme?</summary>
+            <p>Kanjon nudi pešačenje i planinarenje stazama uz reku, fotografiju prirode, ribolov, posmatranje ptica (uključujući suri orao), i posete obližnjim manastirima. U blizini su i bazeni sa termomineralnom vodom.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li je kanjon Jerme pogodan za jednodnevni izlet?</summary>
+            <p>Da, kanjon je idealan za jednodnevni izlet iz Pirota ili Niša. Kombinujte posetu kanjonu sa kupanjem u bazenima Zvonačke Banje, obilaskom manastira Poganovo i penjanjem na Asenovo Kale.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koliko je dugačak kanjon reke Jerme?</summary>
+            <p>Kanjon reke Jerme se proteže na dužini od oko 20 km kroz jugoistočnu Srbiju. Najimpresivniji deo kanjona sa visokim stenovitim liticama nalazi se u blizini Zvonačke Banje i manastira Poganovo.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Šta mogu videti u kanjonu Jerme?</summary>
+            <p>U kanjonu možete videti visoke stenovite litice, bistru reku sa malim slapovima, bogatu vegetaciju, razne vrste ptica uključujući surog orla, i jedinstven pogled na netaknutu prirodu jugoistočne Srbije.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li postoje staze za pešačenje uz kanjon?</summary>
+            <p>Da, uz kanjon reke Jerme postoje staze za pešačenje različitih težina. Staze vode kroz spektakularne predele i pružaju nezaboravne poglede na vertikalne litice i gustu vegetaciju. Postoje i staze zdravlja u sklopu Zvonačke Banje.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koje znamenitosti su u blizini kanjona?</summary>
+            <p>U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), manastir Poganovo iz 14. veka, greben Asenovo Kale (1032 m) sa gnezdima surih orlova, i pećina Vetrena Dupka sa 4 km kanala.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <RelatedAttractions current="/kanjon-jerme/" />
   </main>
   <Footer />
@@ -219,6 +328,109 @@ import Footer from "../components/Footer.astro";
     .attraction-content__inner {
       gap: 1em;
     }
+  }
+
+  .attraction-details {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: 0 var(--spacing-section);
+  }
+
+  .attraction-details__inner {
+    max-width: 48em;
+  }
+
+  .attraction-details__inner h2 {
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .attraction-details__inner h2:first-child {
+    margin-top: 0;
+  }
+
+  .attraction-details__inner p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .attraction-details__inner a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .attraction-faq {
+    width: 100%;
+    background-color: var(--color-bg-alt, #1a2a1d);
+    padding-block: var(--spacing-section);
+  }
+
+  .attraction-faq__inner {
+    max-width: 48em;
+  }
+
+  .attraction-faq__inner > h2 {
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-bottom: 2em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item summary {
+    font-size: var(--text-body);
+    color: var(--color-heading);
+    font-weight: 500;
+    padding: 1.25em 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.25em;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-item p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+    padding-bottom: 1.25em;
   }
 
   @media (max-width: 479px) {

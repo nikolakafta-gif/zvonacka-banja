@@ -27,15 +27,63 @@ import Footer from "../components/Footer.astro";
       "url": "https://www.zvonackabanja.net/"
     }
   }}
-  extraSchemas={[{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
-      { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
-      { "@type": "ListItem", "position": 3, "name": "Manastir Poganovo", "item": "https://www.zvonackabanja.net/manastir-poganovo/" }
-    ]
-  }]}
+  extraSchemas={[
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
+        { "@type": "ListItem", "position": 3, "name": "Manastir Poganovo", "item": "https://www.zvonackabanja.net/manastir-poganovo/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kada je osnovan manastir Poganovo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Manastir Poganovo je podignut u 14. veku. Prema predanju, osnivač manastira je srpski plemić iz dinastije Dragaša. Manastir je posvećen Svetom Jovanu Bogoslovu." }
+        },
+        {
+          "@type": "Question",
+          "name": "Čime je poznat manastir Poganovo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Manastir Poganovo je poznat po izuzetnim freskama iz 14. i 15. veka koje svedoče o bogatoj umetničkoj tradiciji srednjovekovne Srbije. Posebno se ističe freska Sv. Jovana Bogoslova." }
+        },
+        {
+          "@type": "Question",
+          "name": "Gde se nalazi manastir Poganovo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Manastir Poganovo se nalazi u kanjonu reke Jerme, u neposrednoj blizini Zvonačke Banje, u jugoistočnoj Srbiji (Pirotski okrug). Okružen je stenovitim liticama i gustom vegetacijom." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako doći do manastira Poganovo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Do manastira se dolazi regionalnim putem iz pravca Pirota ili Babušnice, dolinom reke Jerme. Manastir je udaljen oko 30 km od Pirota. Put prolazi kroz spektakularan kanjon reke Jerme." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koji još manastiri postoje u okolini Zvonačke Banje?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pored manastira Poganovo, u okolini se nalaze manastiri Sukovo i Temska. Sva tri manastira zajedno čine dragoceno kulturno-istorijsko nasleđe jugoistočne Srbije." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li je manastir Poganovo otvoren za posetioce?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, manastir Poganovo je otvoren za posetioce tokom cele godine. Manastir je aktivan i u njemu žive monahinje. Posetioci mogu razgledati crkvu, freske i manastirski kompleks." }
+        },
+        {
+          "@type": "Question",
+          "name": "Šta još mogu posetiti u blizini manastira?",
+          "acceptedAnswer": { "@type": "Answer", "text": "U blizini manastira nalaze se kanjon reke Jerme, bazeni Zvonačke Banje sa termomineralnom vodom, greben Asenovo Kale sa gnezdima surih orlova i pećina Vetrena Dupka sa 4 km podzemnih kanala." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li postoji parking kod manastira Poganovo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, ispred manastira se nalazi parking za posetioce. Prostor je ograničen, pa se tokom praznika i vikenda preporučuje dolazak u ranijim jutarnjim satima." }
+        }
+      ]
+    }
+  ]}
 >
   <Navbar />
   <main id="main-content">
@@ -57,13 +105,7 @@ import Footer from "../components/Footer.astro";
       <div class="attraction-content__inner container">
         <div class="attraction-content__text" data-fade-up>
           <p>
-            Manastir Poganovo je najpoznatiji od obližnjih srednjovekovnih manastira Zvonačke Banje. Podignut u 14. veku, smešten je u živopisnom kanjonu reke Jerme, okružen stenovitim liticama i gustom vegetacijom.
-          </p>
-          <p>
-            Manastir je posvećen Svetom Jovanu Bogoslovu i poznat je po izuzetnim freskama koje svedoče o bogatoj umetničkoj tradiciji srednjovekovne Srbije. Mirno okruženje i netaknuta priroda čine ga idealnim mestom za duhovni odmor i kontemplaciju.
-          </p>
-          <p>
-            Pored Poganova, gosti mogu posetiti i obližnje manastire Sukovo i Temska, koji zajedno čine dragoceno kulturno-istorijsko nasleđe ovog kraja.
+            Manastir Poganovo je srednjovekovni manastir iz 14. veka posvećen Svetom Jovanu Bogoslovu, poznat po izuzetnim freskama i smešten u živopisnom kanjonu reke Jerme kod Zvonačke Banje. Jedan je od najvažnijih kulturno-istorijskih spomenika jugoistočne Srbije i aktivno mesto duhovnog života.
           </p>
         </div>
         <div class="attraction-content__image" data-reveal>
@@ -72,6 +114,76 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </section>
+
+    <section class="attraction-details">
+      <div class="attraction-details__inner container">
+        <h2>Kada je osnovan i ko je izgradio manastir Poganovo?</h2>
+        <p>
+          Manastir Poganovo je podignut u 14. veku, u vreme vladavine srpskih despota. Prema predanju, osnivač manastira je srpski plemić iz dinastije Dragaša. Manastir je smešten u samom kanjonu reke Jerme, na mestu gde se litice uzdižu visoko iznad rečnog korita, što mu je pružalo prirodnu zaštitu tokom turbulentnih istorijskih perioda.
+        </p>
+
+        <h2>Čime su posebne freske manastira Poganovo?</h2>
+        <p>
+          Manastir Poganovo je poznat po izuzetnim freskama iz 14. i 15. veka koje svedoče o bogatoj umetničkoj tradiciji srednjovekovne Srbije. Posebno se ističe freska Svetog Jovana Bogoslova, zaštitnika manastira. Freske su rađene u stilu moravske škole i predstavljaju vredne primere srpskog srednjovekovnog slikarstva. Crkva je posvećena Svetom Jovanu Bogoslovu — jedinom apostolu koji je umro prirodnom smrću.
+        </p>
+
+        <h2>Kako doći do manastira Poganovo?</h2>
+        <p>
+          Do manastira se dolazi regionalnim putem iz pravca Pirota (udaljenost oko 30 km) ili iz pravca Babušnice, dolinom reke Jerme. Put prolazi kroz spektakularan kanjon sa visokim stenovitim liticama — sam put je doživljaj za sebe. Ispred manastira se nalazi parking za posetioce, ali je prostor ograničen, pa se tokom praznika preporučuje raniji dolazak.
+        </p>
+
+        <h2>Koji još manastiri postoje u okolini?</h2>
+        <p>
+          Pored manastira Poganovo, u okolini Zvonačke Banje nalaze se i manastiri Sukovo i Temska. Sva tri manastira zajedno čine dragoceno kulturno-istorijsko nasleđe jugoistočne Srbije. Manastir Sukovo se nalazi uzvodno uz Jermu, dok je manastir Temska smešten u obližnjoj dolini reke Temštice. Poseta sva tri manastira je moguća u jednom danu.
+        </p>
+
+        <h2>Šta još posetiti u blizini manastira?</h2>
+        <p>
+          U neposrednoj blizini manastira nalaze se <a href="/kanjon-jerme/">kanjon reke Jerme</a> sa stazama za pešačenje, <a href="/bazen-zvonacka-banja/">bazeni Zvonačke Banje</a> sa termomineralnom vodom temperature 28°C, greben <a href="/asenovo-kale/">Asenovo Kale</a> na 1032 m nadmorske visine sa gnezdima surih orlova, i pećina Vetrena Dupka sa 4 km podzemnih kanala.
+        </p>
+      </div>
+    </section>
+
+    <section class="attraction-faq">
+      <div class="attraction-faq__inner container">
+        <h2>Često postavljana pitanja o manastiru Poganovo</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Kada je osnovan manastir Poganovo?</summary>
+            <p>Manastir Poganovo je podignut u 14. veku. Prema predanju, osnivač manastira je srpski plemić iz dinastije Dragaša. Manastir je posvećen Svetom Jovanu Bogoslovu.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Čime je poznat manastir Poganovo?</summary>
+            <p>Manastir Poganovo je poznat po izuzetnim freskama iz 14. i 15. veka koje svedoče o bogatoj umetničkoj tradiciji srednjovekovne Srbije. Posebno se ističe freska Sv. Jovana Bogoslova.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Gde se nalazi manastir Poganovo?</summary>
+            <p>Manastir Poganovo se nalazi u kanjonu reke Jerme, u neposrednoj blizini Zvonačke Banje, u jugoistočnoj Srbiji (Pirotski okrug). Okružen je stenovitim liticama i gustom vegetacijom.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kako doći do manastira Poganovo?</summary>
+            <p>Do manastira se dolazi regionalnim putem iz pravca Pirota ili Babušnice, dolinom reke Jerme. Manastir je udaljen oko 30 km od Pirota. Put prolazi kroz spektakularan kanjon reke Jerme.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koji još manastiri postoje u okolini Zvonačke Banje?</summary>
+            <p>Pored manastira Poganovo, u okolini se nalaze manastiri Sukovo i Temska. Sva tri manastira zajedno čine dragoceno kulturno-istorijsko nasleđe jugoistočne Srbije.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li je manastir Poganovo otvoren za posetioce?</summary>
+            <p>Da, manastir Poganovo je otvoren za posetioce tokom cele godine. Manastir je aktivan i u njemu žive monahinje. Posetioci mogu razgledati crkvu, freske i manastirski kompleks.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Šta još mogu posetiti u blizini manastira?</summary>
+            <p>U blizini manastira nalaze se kanjon reke Jerme, bazeni Zvonačke Banje sa termomineralnom vodom, greben Asenovo Kale sa gnezdima surih orlova i pećina Vetrena Dupka sa 4 km podzemnih kanala.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li postoji parking kod manastira Poganovo?</summary>
+            <p>Da, ispred manastira se nalazi parking za posetioce. Prostor je ograničen, pa se tokom praznika i vikenda preporučuje dolazak u ranijim jutarnjim satima.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <RelatedAttractions current="/manastir-poganovo/" />
   </main>
   <Footer />
@@ -216,6 +328,109 @@ import Footer from "../components/Footer.astro";
     .attraction-content__inner {
       gap: 1em;
     }
+  }
+
+  .attraction-details {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: 0 var(--spacing-section);
+  }
+
+  .attraction-details__inner {
+    max-width: 48em;
+  }
+
+  .attraction-details__inner h2 {
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .attraction-details__inner h2:first-child {
+    margin-top: 0;
+  }
+
+  .attraction-details__inner p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .attraction-details__inner a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .attraction-faq {
+    width: 100%;
+    background-color: var(--color-bg-alt, #1a2a1d);
+    padding-block: var(--spacing-section);
+  }
+
+  .attraction-faq__inner {
+    max-width: 48em;
+  }
+
+  .attraction-faq__inner > h2 {
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-bottom: 2em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item summary {
+    font-size: var(--text-body);
+    color: var(--color-heading);
+    font-weight: 500;
+    padding: 1.25em 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.25em;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-item p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+    padding-bottom: 1.25em;
   }
 
   @media (max-width: 479px) {

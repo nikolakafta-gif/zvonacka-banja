@@ -33,15 +33,63 @@ import Footer from "../components/Footer.astro";
       "url": "https://www.zvonackabanja.net/"
     }
   }}
-  extraSchemas={[{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
-      { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
-      { "@type": "ListItem", "position": 3, "name": "Asenovo Kale", "item": "https://www.zvonackabanja.net/asenovo-kale/" }
-    ]
-  }]}
+  extraSchemas={[
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
+        { "@type": "ListItem", "position": 3, "name": "Asenovo Kale", "item": "https://www.zvonackabanja.net/asenovo-kale/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Šta je Asenovo Kale?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Asenovo Kale je greben na nadmorskoj visini od 1032 m u blizini Zvonačke Banje. To je jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. Na grebenu se nalaze i ostaci srednjovekovne tvrđave." }
+        },
+        {
+          "@type": "Question",
+          "name": "Zašto je Asenovo Kale jedinstveno u Srbiji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi — retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje." }
+        },
+        {
+          "@type": "Question",
+          "name": "Šta je pećina Vetrena Dupka?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Vetrena Dupka je pećina u blizini Asenovog Kaleta sa podzemnim kanalima dužine 4 km. Privlači speleologe i ljubitelje prirode impresivnim podzemnim formacijama i predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako doći do Asenovog Kaleta?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Do Asenovog Kaleta se dolazi iz Zvonačke Banje planinarskim stazama. Polazna tačka je banjski kompleks, odakle staza vodi kroz šumu do grebena. Preporučuje se planinarsko iskustvo i odgovarajuća oprema." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kakav pogled se pruža sa Asenovog Kaleta?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sa grebena se pruža spektakularan panoramski pogled na okolne planine, dolinu reke Jerme i prostranstva Vlaške planine. Po vedrom vremenu, vidik seže do udaljenih vrhova Stare planine." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li postoje ostaci tvrđave na Asenovom Kaletu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, Asenovo Kale je lokalitet sa ostacima srednjovekovne tvrđave, što mu daje dodatnu kulturno-istorijsku vrednost. Tvrđava je služila kao odbrambeno utvrđenje koje je koristilo prirodnu zaštitu strmih litica." }
+        },
+        {
+          "@type": "Question",
+          "name": "Šta još posetiti u blizini Asenovog Kaleta?",
+          "acceptedAnswer": { "@type": "Answer", "text": "U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), kanjon reke Jerme, manastir Poganovo iz 14. veka, i manastiri Sukovo i Temska. Moguće je planinarenje po Vlaškoj i Staroj planini." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li je Asenovo Kale pogodno za početnike?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Uspon na Asenovo Kale zahteva određenu fizičku kondiciju jer staza prolazi kroz strm teren. Nije preporučljivo za potpune početnike ili malu decu. Iskusni planinari će uživati u izazovu i spektakularnom pogledu sa vrha." }
+        }
+      ]
+    }
+  ]}
 >
   <Navbar />
   <main id="main-content">
@@ -63,16 +111,7 @@ import Footer from "../components/Footer.astro";
       <div class="attraction-content__inner container">
         <div class="attraction-content__text" data-fade-up>
           <p>
-            Greben Asenovo Kale nalazi se na nadmorskoj visini od 1032 m i jedino je mesto u Srbiji gde se mogu videti gnezda surih orlova. Ova retka i zaštićena vrsta ptica ovde gnezdi zahvaljujući nepristupačnim liticama i mirnom okruženju daleko od ljudskih naselja.
-          </p>
-          <p>
-            U blizini se nalazi i atraktivna pećina Vetrena Dupka, sa kanalima dužine 4 km. Pećina privlači speleologe i ljubitelje prirode svojim impresivnim podzemnim formacijama i predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji.
-          </p>
-          <p>
-            Sa grebena se pruža spektakularan panoramski pogled na okolne planine, dolinu reke Jerme i prostranstva Vlaške planine. Asenovo Kale je i lokalitet sa ostacima srednjovekovne tvrđave, što mu daje dodatnu kulturno-istorijsku vrednost.
-          </p>
-          <p>
-            Postoje mogućnosti za planinarenje po Vlaškoj i Staroj planini, kao i za lov i ribolov u okolini. U neposrednoj blizini nalaze se i srednjovekovni manastiri Poganovo, Sukovo i Temska.
+            Asenovo Kale je greben na nadmorskoj visini od 1032 m koji je jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. Nalazi se u blizini Zvonačke Banje i nudi spektakularan panoramski pogled na Vlašku planinu, dolinu reke Jerme i okolne planinske vrhove. Na grebenu se nalaze i ostaci srednjovekovne tvrđave.
           </p>
         </div>
         <div class="attraction-content__image" data-reveal>
@@ -81,6 +120,76 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </section>
+
+    <section class="attraction-details">
+      <div class="attraction-details__inner container">
+        <h2>Zašto je Asenovo Kale jedinstveno u Srbiji?</h2>
+        <p>
+          Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi — retka i zaštićena vrsta ptica grabljivica sa rasponom krila do 2,5 metra. Nepristupačne litice grebena i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje ove impresivne ptice. Posmatranje surih orlova u njihovom prirodnom staništu je jedinstveno iskustvo za ljubitelje prirode i ornitologe.
+        </p>
+
+        <h2>Šta je pećina Vetrena Dupka?</h2>
+        <p>
+          Vetrena Dupka je pećina u blizini Asenovog Kaleta sa podzemnim kanalima dužine 4 km. Pećina privlači speleologe i ljubitelje prirode impresivnim podzemnim formacijama — stalaktitima, stalagmitima i podzemnim dvoranama. Predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji. Za ulazak u pećinu preporučuje se odgovarajuća oprema i iskustvo u speleologiji.
+        </p>
+
+        <h2>Kakav pogled se pruža sa grebena?</h2>
+        <p>
+          Sa vrha Asenovog Kaleta na 1032 m nadmorske visine pruža se spektakularan panoramski pogled na okolne planine, dolinu reke Jerme i prostranstva Vlaške planine. Po vedrom vremenu, vidik seže do udaljenih vrhova Stare planine. Ovo je jedno od najlepših panoramskih mesta u jugoistočnoj Srbiji.
+        </p>
+
+        <h2>Da li postoje ostaci srednjovekovne tvrđave?</h2>
+        <p>
+          Da, Asenovo Kale je lokalitet sa ostacima srednjovekovne tvrđave koja je služila kao odbrambeno utvrđenje. Tvrđava je koristila prirodnu zaštitu strmih litica i kontrolisala pristup dolini reke Jerme. Ostaci zidina su i danas vidljivi i daju grebenu dodatnu kulturno-istorijsku vrednost.
+        </p>
+
+        <h2>Kako doći do Asenovog Kaleta?</h2>
+        <p>
+          Do Asenovog Kaleta se dolazi iz Zvonačke Banje planinarskim stazama. Polazna tačka je banjski kompleks, odakle staza vodi kroz šumu do grebena. Uspon zahteva određenu fizičku kondiciju jer staza prolazi kroz strm teren. U blizini su i staze za planinarenje po Vlaškoj i Staroj planini, te obližnji <a href="/manastir-poganovo/">manastir Poganovo</a>, <a href="/kanjon-jerme/">kanjon Jerme</a> i <a href="/bazen-zvonacka-banja/">bazeni Zvonačke Banje</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="attraction-faq">
+      <div class="attraction-faq__inner container">
+        <h2>Često postavljana pitanja o Asenovom Kaletu</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Šta je Asenovo Kale?</summary>
+            <p>Asenovo Kale je greben na nadmorskoj visini od 1032 m u blizini Zvonačke Banje. To je jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. Na grebenu se nalaze i ostaci srednjovekovne tvrđave.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Zašto je Asenovo Kale jedinstveno u Srbiji?</summary>
+            <p>Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi — retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Šta je pećina Vetrena Dupka?</summary>
+            <p>Vetrena Dupka je pećina u blizini Asenovog Kaleta sa podzemnim kanalima dužine 4 km. Privlači speleologe i ljubitelje prirode impresivnim podzemnim formacijama i predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kako doći do Asenovog Kaleta?</summary>
+            <p>Do Asenovog Kaleta se dolazi iz Zvonačke Banje planinarskim stazama. Polazna tačka je banjski kompleks, odakle staza vodi kroz šumu do grebena. Preporučuje se planinarsko iskustvo i odgovarajuća oprema.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kakav pogled se pruža sa Asenovog Kaleta?</summary>
+            <p>Sa grebena se pruža spektakularan panoramski pogled na okolne planine, dolinu reke Jerme i prostranstva Vlaške planine. Po vedrom vremenu, vidik seže do udaljenih vrhova Stare planine.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li postoje ostaci tvrđave na Asenovom Kaletu?</summary>
+            <p>Da, Asenovo Kale je lokalitet sa ostacima srednjovekovne tvrđave, što mu daje dodatnu kulturno-istorijsku vrednost. Tvrđava je služila kao odbrambeno utvrđenje koje je koristilo prirodnu zaštitu strmih litica.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Šta još posetiti u blizini Asenovog Kaleta?</summary>
+            <p>U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), kanjon reke Jerme, manastir Poganovo iz 14. veka, i manastiri Sukovo i Temska. Moguće je planinarenje po Vlaškoj i Staroj planini.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li je Asenovo Kale pogodno za početnike?</summary>
+            <p>Uspon na Asenovo Kale zahteva određenu fizičku kondiciju jer staza prolazi kroz strm teren. Nije preporučljivo za potpune početnike ili malu decu. Iskusni planinari će uživati u izazovu i spektakularnom pogledu sa vrha.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <RelatedAttractions current="/asenovo-kale/" />
   </main>
   <Footer />
@@ -225,6 +334,109 @@ import Footer from "../components/Footer.astro";
     .attraction-content__inner {
       gap: 1em;
     }
+  }
+
+  .attraction-details {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: 0 var(--spacing-section);
+  }
+
+  .attraction-details__inner {
+    max-width: 48em;
+  }
+
+  .attraction-details__inner h2 {
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .attraction-details__inner h2:first-child {
+    margin-top: 0;
+  }
+
+  .attraction-details__inner p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .attraction-details__inner a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .attraction-faq {
+    width: 100%;
+    background-color: var(--color-bg-alt, #1a2a1d);
+    padding-block: var(--spacing-section);
+  }
+
+  .attraction-faq__inner {
+    max-width: 48em;
+  }
+
+  .attraction-faq__inner > h2 {
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-bottom: 2em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item summary {
+    font-size: var(--text-body);
+    color: var(--color-heading);
+    font-weight: 500;
+    padding: 1.25em 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.25em;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-item p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+    padding-bottom: 1.25em;
   }
 
   @media (max-width: 479px) {
