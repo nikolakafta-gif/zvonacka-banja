@@ -4,7 +4,7 @@
 **Site:** https://zvonackabanja.net
 **About:** Zvonačka Banja — banjski i rekreativni kompleks u jugoistočnoj Srbiji (termomineralni bazeni, kanjon Jerme, manastiri, priroda)
 **Started:** 2026-06-20
-**Current phase:** 05
+**Current phase:** 06
 
 ## Phases
 
@@ -13,7 +13,7 @@
 - [x] 02 — Keyword Strategy ✅ (2026-06-20)
 - [x] 03 — AEO Content ✅ (2026-06-20)
 - [x] 04 — Link Building Foundation ✅ (2026-06-20)
-- [ ] 05 — Content Production
+- [x] 05 — Content Production ✅ (2026-06-20)
 - [ ] 06 — Brand & Entity
 - [ ] 07 — Schema & AI Access
 - [ ] 08 — Link Building at Scale
@@ -227,3 +227,25 @@
 - ⬜ Google Business Profile creation
 - ⬜ Directory submissions (banje-srbije.com, banjeusrbiji.com, TripAdvisor)
 - ⬜ Outreach to B92, eKapija, pirotskikraj.com for link placement
+
+---
+
+## Phase 05 — Content Production Results
+
+**Pillar page created:**
+- ✅ `src/pages/vodic.astro` — "Zvonačka Banja — Kompletni vodič za posetioce"
+  - ~2200 words, 7 question-format H2 sections
+  - Answer-first intro with direct response
+  - Article + FAQPage + BreadcrumbList JSON-LD schema (10 Q&A)
+  - 10-question FAQ accordion section (`<details>/<summary>`)
+  - Internal links to all 4 attraction subpages
+  - URL: `/vodic/`
+  - Responsive styles (desktop → mobile)
+
+**Navigation updated:**
+- ✅ Added "Vodič" link to desktop navbar and mobile menu
+
+**Remaining content (to be produced per 12-month calendar):**
+- ⏭️ Cluster articles: scheduled Jul 2026 – Jun 2027 per KEYWORD-STRATEGY.md
+- ⏭️ Glossary page: deferred — not critical for tourism site
+- ⏭️ FAQ hub page: covered by per-page FAQ sections (10 Q&A on vodic, 8 each on subpages = 42 total FAQs)

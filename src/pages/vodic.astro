@@ -1,0 +1,541 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Zvonačka Banja — Kompletni vodič: bazeni, lečenje, atrakcije"
+  description="Sve o Zvonačkoj Banji na jednom mestu: termomineralni bazeni 28°C, lekovita voda, kanjon Jerme, manastir Poganovo, Asenovo Kale. Vodič za posetioce sa praktičnim savetima."
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Zvonačka Banja — Kompletni vodič za posetioce",
+    "description": "Sveobuhvatni vodič o Zvonačkoj Banji: termomineralni bazeni, lekovita voda, atrakcije u okolini, smeštaj i praktični saveti za posetu.",
+    "url": "https://www.zvonackabanja.net/vodic/",
+    "image": "https://www.zvonackabanja.net/assets/images/hero-services.jpg",
+    "datePublished": "2026-06-20",
+    "dateModified": "2026-06-20",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zvonačka Banja",
+      "url": "https://www.zvonackabanja.net/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.zvonackabanja.net/vodic/"
+    },
+    "about": {
+      "@type": "TouristAttraction",
+      "name": "Zvonačka Banja",
+      "url": "https://www.zvonackabanja.net/"
+    }
+  }}
+  extraSchemas={[
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Vodič", "item": "https://www.zvonackabanja.net/vodic/" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Gde se nalazi Zvonačka Banja?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zvonačka Banja se nalazi u jugoistočnoj Srbiji, u kanjonu reke Jerme, Pirotski okrug. Udaljena je oko 30 km od Pirota i 100 km od Niša. Smeštena je na nadmorskoj visini od 430 metara u okruženju borovih i bukovih šuma." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kako doći do Zvonačke Banje automobilom?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Iz Niša se putuje auto-putem E-75 do skretanja za Babušnicu, zatim regionalnim putem kroz kanjon Jerme. Iz Pirota je put kraći — oko 30 km regionalnim putem. Putovanje kroz kanjon je doživljaj sam po sebi." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koja je temperatura vode u bazenima?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Termomineralna voda u bazenima Zvonačke Banje ima prirodnu temperaturu od 28 stepeni Celzijusa tokom cele godine. Voda izvire sa protoka od 9 litara u sekundi i koristi se kako za kupanje tako i za piće." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koje bolesti leči Zvonačka Banja?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zvonačka Banja leči bolesti lokomotornog aparata, reumatizam, nervne bolesti, povišeni krvni pritisak, poremećaje periferne cirkulacije, klimakterične tegobe, menadžerske bolesti i upalne promene na očima." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko bazena ima u Zvonačkoj Banji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zvonačka Banja ima tri olimpijska bazena — dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom temperature 28 stepeni Celzijusa. Zatvoreni bazeni rade tokom cele godine." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li ima smeštaj u Zvonačkoj Banji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "U Zvonačkoj Banji i okolini postoji privatni smeštaj — vikendice i apartmani. Nekadašnji hotel Mir trenutno ne radi, ali kompleks bazena je aktivan. Za rezervacije kontaktirajte lokalne iznajmljivače." }
+        },
+        {
+          "@type": "Question",
+          "name": "Šta videti u okolini Zvonačke Banje?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Okolina nudi kanjon reke Jerme sa stenovitim liticama, manastir Poganovo iz XIV veka sa znamenitim freskama, tvrđavu Asenovo Kale sa gnezdima surih orlova i pećinu Vetrena Dupka sa 4 km podzemnih kanala." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li je Zvonačka Banja pogodna za porodični odmor?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Da, Zvonačka Banja je idealna za porodice. Bazeni sa toplom vodom su pogodni za sva uzrasta, postoje sportski tereni za aktivne goste, a pešačke staze kroz kanjon Jerme su pristupačne i za decu." }
+        },
+        {
+          "@type": "Question",
+          "name": "Koliko dana treba za posetu Zvonačkoj Banji?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Za osnovno upoznavanje dovoljno je jedan do dva dana. Za opušteno istraživanje svih atrakcija preporučuje se vikend od dva do tri dana. Za banjsko lečenje preporučeni period je sedam do četrnaest dana." }
+        },
+        {
+          "@type": "Question",
+          "name": "Da li Zvonačka Banja radi zimi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zatvoreni bazeni sa termomineralnom vodom rade tokom cele godine jer voda ima konstantnu temperaturu od 28 stepeni Celzijusa. Otvoreni bazen je dostupan samo u letnjoj sezoni. Zimska poseta ima poseban šarm." }
+        }
+      ]
+    }
+  ]}
+>
+  <Navbar />
+  <main id="main-content">
+    <section class="guide-hero">
+      <div class="guide-hero__bg">
+        <div class="guide-hero__overlay"></div>
+      </div>
+      <div class="guide-hero__inner container">
+        <a href="/" class="guide-hero__back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          Početna
+        </a>
+        <span class="eyebrow">Kompletni Vodič</span>
+        <h1 class="guide-hero__title">Zvonačka<br><span class="guide-hero__accent">Banja</span></h1>
+        <p class="guide-hero__subtitle">Sve što treba da znate pre posete</p>
+      </div>
+    </section>
+
+    <section class="guide-intro">
+      <div class="guide-intro__inner container">
+        <p class="guide-intro__lead">
+          Zvonačka Banja je vazdušna banja u jugoistočnoj Srbiji, smeštena u kanjonu reke Jerme na nadmorskoj visini od 430 metara, poznata po termomineralnoj vodi temperature 28°C koja leči bolesti lokomotornog aparata, reumatizam i nervne bolesti. Ovaj vodič pokriva sve što treba da znate pre posete — od bazena i terapija, preko atrakcija u okolini, do smeštaja i praktičnih saveta za putovanje.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-content">
+      <div class="guide-content__inner container">
+
+        <h2>Gde se nalazi Zvonačka Banja?</h2>
+        <p>
+          Zvonačka Banja se nalazi u jugoistočnoj Srbiji, u opštini Babušnica, Pirotski okrug. Smeštena je u živopisnom kanjonu reke Jerme, na nadmorskoj visini od oko 430 metara, okružena borovim i bukovim šumama Vlaške planine. Banja je dobila ime po obližnjem selu Zvonce.
+        </p>
+        <p>
+          Najbliži veći grad je Pirot, udaljen oko 30 km. Babušnica je na oko 30 km, Dimitrovgrad na sličnoj udaljenosti, dok je Niš udaljen oko 100 km, a Beograd oko 350 km. Banja se nalazi u neposrednoj blizini granice sa Bugarskom, u području bogatom prirodnim lepotama i kulturno-istorijskim spomenicima.
+        </p>
+        <p>
+          Zbog specifične konfiguracije terena i položaja u kanjonu, Zvonačka Banja ima jedinstvenu ružu vetrova — strujanja vazduha koja stvaraju blag i lekovit mikroklimat. Upravo zato je, pored balneološke, klasifikovana i kao vazdušna banja — jedna od retkih u Srbiji sa tom dvojnom oznakom.
+        </p>
+
+        <h2>Kako doći do Zvonačke Banje?</h2>
+        <p>
+          <strong>Iz Niša (oko 100 km, ~1.5h):</strong> Putujete auto-putem E-75 u pravcu Sofije do izlaza za Babušnicu. Od Babušnice nastavljate regionalnim putem kroz dolinu reke Jerme. Sam put kroz kanjon je doživljaj za sebe — prolazi između visokih stenovitih litica, pored manastira Poganovo i kroz spektakularne predele.
+        </p>
+        <p>
+          <strong>Iz Pirota (oko 30 km, ~40 min):</strong> Najkraći pristup je regionalnim putem iz Pirota, kroz kanjon reke Jerme. Put je dobro održavan i pogodan za sva vozila.
+        </p>
+        <p>
+          <strong>Iz Beograda (oko 350 km, ~4h):</strong> Auto-putem E-75 do Niša, zatim dalje prema Babušnici i kroz kanjon Jerme. Vožnja je komforna — autoput do Niša, a regionalni put od Babušnice do banje je slikovit i nenaporan.
+        </p>
+        <p>
+          <strong>Javnim prevozom:</strong> Autobuske linije saobraćaju do Pirota i Babušnice iz većih gradova Srbije. Od Pirota ili Babušnice do banje potreban je lokalni prevoz ili taksi. Parking u banjskom kompleksu je besplatan.
+        </p>
+
+        <h2>Šta leči Zvonačka Banja?</h2>
+        <p>
+          Termomineralna voda Zvonačke Banje izvire na temperaturi od 28°C sa protokom od 9 litara u sekundi. Voda je bogata kalcijum-karbonatom i ima visok procenat azota (oko 80%), što joj daje posebna lekovita svojstva. Koristi se kako za kupanje u bazenima, tako i za piće.
+        </p>
+        <p>
+          Banja je naročito efikasna u lečenju sledećih stanja:
+        </p>
+        <ul>
+          <li>Bolesti lokomotornog aparata</li>
+          <li>Reumatizam (degenerativni, zapaljenski, zglobni)</li>
+          <li>Nervne bolesti (neuralgije, neurastenije, vegetativne neuroze)</li>
+          <li>Povišeni krvni pritisak</li>
+          <li>Poremećaji periferne cirkulacije</li>
+          <li>Klimakterične tegobe</li>
+          <li>Menadžerske bolesti (stres, burnout)</li>
+          <li>Upalne promene na očima</li>
+        </ul>
+        <p>
+          U banjskom kompleksu primenjuju se raznovrsne terapije: hidroterapija (kupanje u termomineralnoj vodi), elektroterapija, kineziterapija (lečenje pokretom), parafinoterapija i laseroterapija. Pored klasičnih terapija, postoje i staze zdravlja — obeležene pešačke staze kroz šume kanjona Jerme, koje su deo terapijskog programa.
+        </p>
+
+        <h2>Koji su bazeni i sportski tereni u Zvonačkoj Banji?</h2>
+        <p>
+          Banjski kompleks raspolaže sa tri olimpijska bazena — dva zatvorena i jednim otvorenim — svi punjeni termomineralnom vodom temperature 28°C. Zatvoreni bazeni rade tokom cele godine, dok je otvoreni bazen dostupan u letnjoj sezoni. Detaljne informacije o bazenima pročitajte na stranici <a href="/bazen-zvonacka-banja/">Bazen Zvonačka Banja</a>.
+        </p>
+        <p>
+          Pored bazena, kompleks nudi sportske terene za košarku, mali fudbal, odbojku i tenis. Svi sportski sadržaji su okruženi netaknutom prirodom kanjona reke Jerme, što pruža jedinstven ambijent za rekreaciju na otvorenom.
+        </p>
+
+        <h2>Koje atrakcije postoje u okolini Zvonačke Banje?</h2>
+        <p>
+          Okolina Zvonačke Banje obiluje prirodnim i kulturno-istorijskim atrakcijama koje čine posetu bogatom i raznovrsnom:
+        </p>
+        <p>
+          <strong><a href="/kanjon-jerme/">Kanjon reke Jerme</a></strong> — živopisna klisura sa visokim stenovitim liticama koje se uzdižu do 300 metara iznad rečnog toka. Kanjon se proteže na dužini od oko 20 km i nudi spektakularne poglede, pešačke staze i mogućnosti za fotografiju prirode. Najuži deo kanjona meštani zovu 'Cediljka' zbog izuzetno uskog prolaza između stena.
+        </p>
+        <p>
+          <strong><a href="/manastir-poganovo/">Manastir Poganovo</a></strong> — srednjovekovni manastir iz XIV veka (1395. godina), zadužbina srpskog plemića Konstantina Dejanovića. Manastir čuva izuzetne freske iz 1499. godine, rad umetnika iz severne Grčke, koje se ubrajaju među najviša slikarska ostvarenja tog doba na Balkanu. Galerija fresaka pokriva oko 360 m².
+        </p>
+        <p>
+          <strong><a href="/asenovo-kale/">Asenovo Kale</a></strong> — krečnjački greben na 1032 m nadmorske visine sa ostacima srednjovekovne tvrđave. Ovo je jedino poznato mesto u Srbiji sa gnezdima surih orlova. U blizini se nalazi pećina Vetrena Dupka sa preko 4 km podzemnih kanala.
+        </p>
+        <p>
+          U široj okolini nalaze se i manastir Sukovo, manastir Temska, planinarške staze na Vlaškoj planini i zimski turizam na Staroj planini.
+        </p>
+
+        <h2>Kakav je smeštaj u Zvonačkoj Banji?</h2>
+        <p>
+          U Zvonačkoj Banji i okolini dostupan je privatni smeštaj — vikendice i apartmani u vlasništvu lokalnih iznajmljivača. Nekadašnji hotel Mir, koji je bio centralni objekat banjskog kompleksa, trenutno ne radi, ali bazeni i sportski tereni su aktivni i otvoreni za posetioce.
+        </p>
+        <p>
+          Cene smeštaja su među najpovoljnijim u Srbiji — privatni smeštaj za dve osobe kreće se od oko 2.000 dinara po noćenju, što Zvonačku Banju čini pristupačnom destinacijom za sve budžete. Za rezervacije je najbolje kontaktirati lokalne iznajmljivače direktno ili putem platformi za smeštaj.
+        </p>
+        <p>
+          Obližnji Pirot (30 km) i Dimitrovgrad (30 km) nude dodatne opcije smeštaja — hotele i pansione — za one koji preferiraju gradski komfor uz dnevne izlete u banju.
+        </p>
+
+        <h2>Koliko dana je dovoljno za posetu Zvonačkoj Banji?</h2>
+        <p>
+          <strong>Jednodnevni izlet (1 dan):</strong> Dovoljno za kupanje u bazenima, vožnju kroz kanjon Jerme i kratku posetu manastiru Poganovo. Idealno za posetioce iz Pirota ili Niša koji žele da upoznaju banju bez noćenja.
+        </p>
+        <p>
+          <strong>Vikend odmor (2–3 dana):</strong> Preporučeni raspored — prvi dan za bazene i šetnju kroz kanjon, drugi dan za manastir Poganovo i penjanje na Asenovo Kale, treći dan za opuštanje i istraživanje okoline. Ovaj period omogućava da se svi glavni sadržaji obiđu bez žurbe.
+        </p>
+        <p>
+          <strong>Banjsko lečenje (7–14 dana):</strong> Za one koji dolaze radi terapija i lečenja, preporučeni period je jedna do dve nedelje. Kontinuirano korišćenje termomineralne vode i terapija daje najbolje rezultate za reumatske i nervne bolesti.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-faq">
+      <div class="guide-faq__inner container">
+        <h2>Često postavljana pitanja o Zvonačkoj Banji</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Gde se nalazi Zvonačka Banja?</summary>
+            <p>Zvonačka Banja se nalazi u jugoistočnoj Srbiji, u kanjonu reke Jerme, Pirotski okrug. Udaljena je oko 30 km od Pirota i 100 km od Niša. Smeštena je na nadmorskoj visini od 430 metara u okruženju borovih i bukovih šuma.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kako doći do Zvonačke Banje automobilom?</summary>
+            <p>Iz Niša se putuje auto-putem E-75 do skretanja za Babušnicu, zatim regionalnim putem kroz kanjon Jerme. Iz Pirota je put kraći — oko 30 km regionalnim putem. Putovanje kroz kanjon je doživljaj sam po sebi.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koja je temperatura vode u bazenima?</summary>
+            <p>Termomineralna voda u bazenima Zvonačke Banje ima prirodnu temperaturu od 28°C tokom cele godine. Voda izvire sa protoka od 9 litara u sekundi i koristi se kako za kupanje tako i za piće.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koje bolesti leči Zvonačka Banja?</summary>
+            <p>Zvonačka Banja leči bolesti lokomotornog aparata, reumatizam, nervne bolesti, povišeni krvni pritisak, poremećaje periferne cirkulacije, klimakterične tegobe, menadžerske bolesti i upalne promene na očima.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koliko bazena ima u Zvonačkoj Banji?</summary>
+            <p>Zvonačka Banja ima tri olimpijska bazena — dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom temperature 28°C. Zatvoreni bazeni rade tokom cele godine.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li ima smeštaj u Zvonačkoj Banji?</summary>
+            <p>U Zvonačkoj Banji i okolini postoji privatni smeštaj — vikendice i apartmani. Nekadašnji hotel Mir trenutno ne radi, ali kompleks bazena je aktivan. Za rezervacije kontaktirajte lokalne iznajmljivače.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Šta videti u okolini Zvonačke Banje?</summary>
+            <p>Okolina nudi kanjon reke Jerme sa stenovitim liticama, manastir Poganovo iz XIV veka sa znamenitim freskama, tvrđavu Asenovo Kale sa gnezdima surih orlova i pećinu Vetrena Dupka sa 4 km podzemnih kanala.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li je Zvonačka Banja pogodna za porodični odmor?</summary>
+            <p>Da, Zvonačka Banja je idealna za porodice. Bazeni sa toplom vodom su pogodni za sva uzrasta, postoje sportski tereni za aktivne goste, a pešačke staze kroz kanjon Jerme su pristupačne i za decu.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Koliko dana treba za posetu Zvonačkoj Banji?</summary>
+            <p>Za osnovno upoznavanje dovoljno je 1–2 dana. Za opušteno istraživanje svih atrakcija preporučuje se vikend (2–3 dana). Za banjsko lečenje preporučeni period je 7–14 dana.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Da li Zvonačka Banja radi zimi?</summary>
+            <p>Zatvoreni bazeni sa termomineralnom vodom rade tokom cele godine jer voda ima konstantnu temperaturu od 28°C. Otvoreni bazen je dostupan samo u letnjoj sezoni. Zimska poseta ima čar — sneg u kanjonu i tišina.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .guide-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/images/hero-services.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .guide-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(14, 26, 16, 0.95) 0%, rgba(14, 26, 16, 0.4) 100%);
+  }
+
+  .guide-hero__inner {
+    position: relative;
+    z-index: 1;
+    padding-block: 8em 4em;
+    padding-inline: var(--container-padding);
+    max-width: var(--size-container);
+    margin-inline: auto;
+  }
+
+  .guide-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: var(--text-body-sm, 0.875em);
+    margin-bottom: 1.5em;
+    transition: color 0.3s ease;
+  }
+
+  .guide-hero__back:hover {
+    color: var(--color-accent);
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: var(--text-body-sm, 0.875em);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.68px;
+    margin-bottom: 0.75em;
+    font-weight: 500;
+  }
+
+  .guide-hero__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-h1, 4.25em);
+    font-weight: 400;
+    color: var(--color-heading);
+    line-height: 1.05;
+    letter-spacing: -1.92px;
+  }
+
+  .guide-hero__accent {
+    color: var(--color-accent);
+  }
+
+  .guide-hero__subtitle {
+    font-size: var(--text-body, 1em);
+    color: var(--color-text-light);
+    margin-top: 1em;
+    font-weight: 300;
+  }
+
+  .guide-intro {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: var(--spacing-section);
+  }
+
+  .guide-intro__inner {
+    max-width: var(--size-container);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+  }
+
+  .guide-intro__lead {
+    max-width: 48em;
+    font-size: 1.125em;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1.5em;
+  }
+
+  .guide-content {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: 0 var(--spacing-section);
+  }
+
+  .guide-content__inner {
+    max-width: var(--size-container);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+  }
+
+  .guide-content__inner h2 {
+    max-width: 48em;
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .guide-content__inner h2:first-child {
+    margin-top: 0;
+  }
+
+  .guide-content__inner p {
+    max-width: 48em;
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .guide-content__inner ul {
+    max-width: 48em;
+    list-style: none;
+    padding-left: 1.5em;
+    margin-block: 0.5em 1em;
+  }
+
+  .guide-content__inner li {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+    padding-left: 1em;
+    position: relative;
+  }
+
+  .guide-content__inner li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+  }
+
+  .guide-content__inner a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .guide-faq {
+    width: 100%;
+    background-color: var(--color-bg-alt, #1a2a1d);
+    padding-block: var(--spacing-section);
+  }
+
+  .guide-faq__inner {
+    max-width: var(--size-container);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+  }
+
+  .guide-faq__inner > h2 {
+    max-width: 48em;
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+    margin-bottom: 2em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .faq-list {
+    max-width: 48em;
+  }
+
+  .faq-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item summary {
+    font-size: var(--text-body);
+    color: var(--color-heading);
+    font-weight: 500;
+    padding: 1.25em 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.25em;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: "\2212";
+  }
+
+  .faq-item p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+    padding-bottom: 1.25em;
+  }
+
+  @media (max-width: 991px) {
+    .guide-hero {
+      min-height: 50vh;
+    }
+    .guide-hero__title {
+      font-size: 3em;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .guide-hero {
+      min-height: 45vh;
+    }
+    .guide-hero__inner {
+      padding-block: 6em 3em;
+    }
+    .guide-hero__title {
+      font-size: 2.5em;
+    }
+    .guide-content__inner h2 {
+      margin-top: 2em;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .guide-hero__title {
+      font-size: 2em;
+    }
+  }
+</style>
