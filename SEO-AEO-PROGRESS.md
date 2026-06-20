@@ -4,15 +4,15 @@
 **Site:** https://zvonackabanja.net
 **About:** Zvonačka Banja — banjski i rekreativni kompleks u jugoistočnoj Srbiji (termomineralni bazeni, kanjon Jerme, manastiri, priroda)
 **Started:** 2026-06-20
-**Current phase:** 03
+**Current phase:** 05
 
 ## Phases
 
 - [x] 00 — Foundation Audit ✅ (2026-06-20)
 - [x] 01 — Technical SEO ✅ (2026-06-20)
 - [x] 02 — Keyword Strategy ✅ (2026-06-20)
-- [ ] 03 — AEO Content
-- [ ] 04 — Link Building Foundation
+- [x] 03 — AEO Content ✅ (2026-06-20)
+- [x] 04 — Link Building Foundation ✅ (2026-06-20)
 - [ ] 05 — Content Production
 - [ ] 06 — Brand & Entity
 - [ ] 07 — Schema & AI Access
@@ -161,3 +161,69 @@
 **Content Gaps Identified:**
 - ❌ No content on: istorija banje, hemijski sastav vode, smeštaj/cene, kako doći
 - ✅ Our unique advantages: dedicated attraction pages (competitors don't have), schema markup, modern design
+
+---
+
+## Phase 03 — AEO Content Results
+
+**Content Expansion (all 4 subpages):**
+- ✅ `bazen-zvonacka-banja.astro` — expanded from ~200 to ~800+ words
+- ✅ `manastir-poganovo.astro` — expanded from ~200 to ~800+ words
+- ✅ `kanjon-jerme.astro` — expanded from ~200 to ~800+ words
+- ✅ `asenovo-kale.astro` — expanded from ~200 to ~800+ words
+
+**AEO Structure Added (all 4 subpages):**
+- ✅ Answer-first introductions (direktan odgovor u prva 2–3 rečenice)
+- ✅ Question-format H2 headings (5 per page)
+- ✅ FAQ accordion sections (`<details>/<summary>`, 8 Q&A each)
+- ✅ FAQPage JSON-LD schema (8 Q&A per page, in `extraSchemas` array)
+- ✅ Internal cross-links between all attraction pages
+
+**Content Brief:**
+- ✅ `CONTENT-BRIEF-PILLAR.md` — full brief for pillar article "Zvonačka Banja — Kompletni Vodič"
+  - 7 question-format H2 sections, 10-question FAQ, internal link plan
+  - Target: 2000+ words, URL: `/vodic/`
+
+**Author Bio Pages:** ⏭️ Skipped — not applicable for tourism/informational site without blog authors
+
+**AEO Visibility Re-Check (2026-06-20):**
+- ❌ **zvonackabanja.net is NOT indexed by Google** — `site:zvonackabanja.net` returns 0 results
+- ❌ Site does not appear in search results for ANY target keyword
+- ❌ No visibility in AI answer engines (not indexed = not cited)
+- ⚠️ Competitor zvonackabanja.com IS indexed and appears in results
+- ⚠️ banjeusrbiji.com and turizmopedija.com dominate all keyword queries
+
+**Top competitors ranking for our target keywords:**
+| Query | Top results (our site absent) |
+|-------|-------------------------------|
+| "zvonačka banja" | zooncoolion.blog, espreso.co.rs, banjeusrbiji.com, turizmopedija.com |
+| "bazeni zvonačka banja" | juznevesti.com, sensa.mondo.rs, banjeusrbiji.net, turizmopedija.com |
+| "kanjon reke Jerme" | travel.rs, hotelhappy.rs, zivetisaprirodom.rs, turizmopedija.com |
+| "manastir Poganovo" | rts.rs, lepotesrbije.alo.rs, pirotskevesti.rs, panacomp.net |
+| "šta leči zvonačka banja" | espreso.co.rs, kurir.rs, zooncoolion.blog, banjeusrbiji.com |
+| "Asenovo Kale" | espreso.co.rs, perpetuummobile.blog, planine.net |
+
+**🚨 CRITICAL ACTION REQUIRED:**
+1. **Google Search Console** — user MUST verify ownership and submit sitemap (https://www.zvonackabanja.net/sitemap-index.xml)
+2. **Google Indexing API** — consider requesting indexing of all 5 pages manually via GSC
+3. **Wait time** — new domains typically take 2–4 weeks to get indexed, but GSC submission accelerates this
+
+---
+
+## Phase 04 — Link Building Foundation Results
+
+**Deliverables created:**
+- ✅ `LINK-BUILDING.md` — complete link building strategy document
+
+**Key findings:**
+- 15 unlinked brand mentions identified (B92, Kurir, eKapija, Espreso, travel blogs)
+- 10 niche directories for submission (banje-srbije.com, banjeusrbiji.com, TripAdvisor, GBP)
+- 3 outreach email templates (unlinked mention, broken link, resource page)
+- 5 linkable asset ideas (interactive map, PDF guide, photo gallery, infographic, comparison)
+- 20 link building prospects identified
+
+**Priority actions (user must execute):**
+- ⬜ Google Search Console verification (CRITICAL — site not indexed)
+- ⬜ Google Business Profile creation
+- ⬜ Directory submissions (banje-srbije.com, banjeusrbiji.com, TripAdvisor)
+- ⬜ Outreach to B92, eKapija, pirotskikraj.com for link placement
