@@ -4,7 +4,8 @@
 **Site:** https://zvonackabanja.net
 **About:** Zvonačka Banja — banjski i rekreativni kompleks u jugoistočnoj Srbiji (termomineralni bazeni, kanjon Jerme, manastiri, priroda)
 **Started:** 2026-06-20
-**Current phase:** 06
+**Current phase:** COMPLETE
+**Completed:** 2026-06-20
 
 ## Phases
 
@@ -14,11 +15,11 @@
 - [x] 03 — AEO Content ✅ (2026-06-20)
 - [x] 04 — Link Building Foundation ✅ (2026-06-20)
 - [x] 05 — Content Production ✅ (2026-06-20)
-- [ ] 06 — Brand & Entity
-- [ ] 07 — Schema & AI Access
-- [ ] 08 — Link Building at Scale
-- [ ] 09 — UX & Conversion
-- [ ] 10 — Measurement
+- [x] 06 — Brand & Entity ✅ (2026-06-20)
+- [x] 07 — Schema & AI Access ✅ (2026-06-20)
+- [x] 08 — Link Building at Scale ✅ (2026-06-20)
+- [x] 09 — UX & Conversion ✅ (2026-06-20) — partial, GA4/GSC data deferred
+- [x] 10 — Measurement ✅ (2026-06-20) — baseline set, data-dependent items deferred
 
 ---
 
@@ -249,3 +250,209 @@
 - ⏭️ Cluster articles: scheduled Jul 2026 – Jun 2027 per KEYWORD-STRATEGY.md
 - ⏭️ Glossary page: deferred — not critical for tourism site
 - ⏭️ FAQ hub page: covered by per-page FAQ sections (10 Q&A on vodic, 8 each on subpages = 42 total FAQs)
+
+---
+
+## Phase 06 — Brand & Entity Results
+
+**Deliverables created:**
+- ✅ `BRAND-ENTITY.md` — complete brand & entity document
+
+**Brand descriptions (3 lengths):**
+- ✅ 50-word version (directory listings, social bios)
+- ✅ 150-word version (press, about pages, Google Business Profile)
+- ✅ 250-word LinkedIn/long version (articles, detailed profiles)
+
+**Entity status:**
+- ✅ Wikidata entry confirmed: Q31182513
+- ✅ NAP consistency audit (current state documented)
+- ✅ Press page content prepared
+- ✅ Entity building checklist created
+
+**Actions requiring user (documented in BRAND-ENTITY.md):**
+- ⬜ Add official website to Wikidata Q31182513 (P856 property)
+- ⬜ Create Google Business Profile
+- ⬜ Create TripAdvisor attraction listing
+- ⬜ Update Facebook page website link (.com → .net)
+
+---
+
+## Phase 07 — Schema & AI Access Results
+
+**Deliverables created:**
+- ✅ `SCHEMA-AUDIT.md` — full schema & AI access audit
+
+**Schema audit:**
+- ✅ All 6 pages have correct primary schema types
+- ✅ BreadcrumbList on all 6 pages
+- ✅ FAQPage on 5 pages (42 total Q&A pairs)
+- ✅ Organization schema on homepage with sameAs → Wikidata
+- ✅ No malformed schema found
+
+**Schema improvements (code changes):**
+- ✅ Added `sameAs: ["https://www.wikidata.org/wiki/Q31182513"]` to Organization schema on homepage
+
+**AI crawler access:**
+- ✅ All 8 major AI bots explicitly allowed in robots.txt
+- ✅ No changes needed
+
+**llms.txt update:**
+- ✅ Expanded brand description
+- ✅ Added vodič page (was missing)
+- ✅ Added "Ključne činjenice" section
+- ✅ Added contact info
+
+**Server rendering:**
+- ✅ Static HTML — all content visible without JavaScript
+
+**Internal linking improvements (code changes):**
+- ✅ Bazen page: added 4 in-content cross-links (Kanjon Jerme, Manastir Poganovo, Asenovo Kale, Vodič)
+- ✅ Vodič page: added RelatedAttractions component (shows 4 attraction cards)
+- ✅ RelatedAttractions component: added vodič as 5th item — now appears on all subpages
+- ✅ Result: complete internal link mesh — every page links to every other page
+
+---
+
+## Phase 08 — Link Building at Scale Results
+
+**Deliverables created:**
+- ✅ `LINK-BUILDING-SCALE.md` — complete scalable link building system
+
+**Contents:**
+- ✅ 20 new link building prospects (competitor backlink sources, niche resource pages, regional media)
+- ✅ 10 guest post opportunities with specific article titles and target pages
+- ✅ Guest post pitch email (ready to send, personalized for travel.rs)
+- ✅ 7 resource page opportunities for directory submissions
+- ✅ Expert roundup plan: question, 15 contributors, outreach email template
+- ✅ Toxic link audit: N/A (new site, no backlink profile)
+- ✅ Monthly outreach system template (weekly tasks, monthly KPIs, tracking columns)
+- ✅ Priority action plan: 14 items across immediate/short-term/medium-term
+
+---
+
+## Phase 09 — UX & Conversion Results
+
+**Deliverables created:**
+- ✅ `UX-CONVERSION.md` — UX and conversion audit
+
+**Completed without data:**
+- ✅ UX audit of all 6 pages (structure, scannability, mobile, CTAs)
+- ✅ CTA audit: identified missing CTAs on 5/6 pages
+- ✅ Internal linking review: confirmed complete mesh from Phase 07
+- ✅ Title/meta length review: all within limits
+
+**Deferred (requires GA4/GSC data):**
+- ⏳ Top landing page analysis — no organic traffic yet
+- ⏳ High-impression / low-CTR pages — no GSC data
+- ⏳ Title/meta rewrites for CTR — need actual search queries
+- ⏳ Underperforming content review — site too new
+
+**Key UX findings:**
+- ⚠️ Only 1 CTA across entire site (Trivago link in navbar)
+- ⚠️ No contact form or email capture
+- ⚠️ Subpages have no action-oriented CTA before RelatedAttractions
+- Recommendation: Add CTA blocks to subpages linking to /vodic/ or Trivago
+
+---
+
+## Phase 10 — Measurement Results
+
+### Current State vs Phase 00 Baseline
+
+| Metric | Phase 00 (baseline) | Phase 10 (current) | Change |
+|--------|--------------------|--------------------|--------|
+| Pages | 5 | 6 (+vodič) | +20% |
+| Total word count | ~1,100 | ~6,600+ | +500% |
+| Schema types | 2 (Tourist, Sports) | 6 (Tourist, Sports, Article, Org, FAQ, Breadcrumb) | +200% |
+| FAQ questions in schema | 0 | 42 | New |
+| Internal links per page | 1-2 | 5-8 | +300% |
+| AI crawler access | Partial | Full (8 bots) | ✅ |
+| llms.txt | Missing | Complete | New |
+| Security headers | 1 | 6 | +500% |
+| Robots.txt | Broken sitemap URL | Fixed + AI bots | ✅ |
+| Meta descriptions | Generic | Optimized per page | ✅ |
+| Title tags | Basic | Keyword-optimized | ✅ |
+| Content structure | Flat paragraphs | Question H2s + FAQs | ✅ |
+| Brand documentation | None | 3-length descriptions + entity checklist | New |
+| Link building strategy | None | 35+ prospects + templates | New |
+| Keyword strategy | None | 30 seeds, 8 clusters, 12-month calendar | New |
+
+### Indexing Status
+
+🚨 **CRITICAL BLOCKER: Site is NOT indexed by Google**
+- `site:zvonackabanja.net` returns 0 results
+- All SEO work is ready but invisible until indexed
+- **User MUST complete Google Search Console verification**
+
+### Deferred Items (require user action or time)
+
+| Item | Depends on | When to do |
+|------|-----------|------------|
+| GSC verification | User action | ASAP |
+| Sitemap submission | GSC verification | Immediately after GSC |
+| Google Business Profile | User action | This week |
+| TripAdvisor listing | User action | This week |
+| Directory submissions | User action | This week |
+| Wikidata P856 update | User action (Wikidata account) | This week |
+| Traffic analysis | 4-6 weeks of index data | Aug 2026 |
+| CTR optimization | GSC data | Aug 2026 |
+| Content calendar (first article) | User writing | Jul 2026 |
+| Link outreach (first batch) | User sending emails | This week |
+
+### Monthly Report Template
+
+```
+# Monthly SEO Report — [Month Year]
+
+## Organic Traffic (GA4)
+- Sessions: [X] (vs last month: [+/-X%])
+- New users: [X]
+- Avg engagement time: [X]
+- Top landing pages:
+  1. [page] — [sessions]
+  2. [page] — [sessions]
+  3. [page] — [sessions]
+
+## Rankings (GSC)
+- Total impressions: [X]
+- Total clicks: [X]
+- Average CTR: [X%]
+- Average position: [X]
+- Keywords in top 3: [X]
+- Keywords in top 10: [X]
+- Keywords in top 30: [X]
+- Notable movements:
+  - [keyword] [old position] → [new position]
+
+## Links
+- New links acquired: [X]
+- Outreach emails sent: [X]
+- Response rate: [X%]
+- Notable links:
+  - [site] → [page]
+
+## AEO Citations
+- Brand mentions in AI answers: [X]
+- New citations: [list]
+
+## Content Published
+- [article title] — [URL] — [word count]
+
+## Top 3 Actions for Next Month
+1. [action]
+2. [action]
+3. [action]
+```
+
+### Year 1 Targets (Jul 2026 – Jun 2027)
+
+| Metric | Target | Basis |
+|--------|--------|-------|
+| Indexed pages | 6 → 20+ | 12-month content calendar |
+| Monthly organic sessions | 0 → 500+ | Conservative for niche tourism |
+| Keywords in top 10 | 0 → 15+ | 8 clusters × 2 keywords |
+| Keywords in top 30 | 0 → 40+ | 30 seed keywords |
+| Backlinks | 0 → 30+ | 2-4 links/month |
+| AEO citations | 0 → 5+ | FAQ-rich content + schema |
+| Content published | 6 → 20+ | 1-2 articles/month |
+| Domain Rating | 0 → 15+ | Link building + directory submissions |

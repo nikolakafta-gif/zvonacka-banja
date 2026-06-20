@@ -1,16 +1,28 @@
 # Zvonačka Banja
 
-> Zvonačka Banja je lekovita vazdušna banja u jugoistočnoj Srbiji, na 670 m nadmorske visine, na obroncima Vlaške planine. Termomineralna voda temperature 28°C koristi se za piće i kupanje.
+> Zvonačka Banja je lekovita vazdušna i balneološka banja u jugoistočnoj Srbiji, smeštena u kanjonu reke Jerme na nadmorskoj visini od 430 metara, Pirotski okrug. Banja raspolaže sa tri olimpijska bazena punjeni termomineralnom vodom temperature 28°C. Lekovita voda pomaže u lečenju reumatizma, bolesti lokomotornog aparata, nervnih bolesti i povišenog krvnog pritiska.
 
 ## Stranice
 
-- [Početna](https://www.zvonackabanja.net/): Glavni pregled banjskog kompleksa — bazeni, priroda, znamenitosti
-- [Manastir Poganovo](https://www.zvonackabanja.net/manastir-poganovo/): Srednjovekovni manastir iz 14. veka u kanjonu reke Jerme
-- [Kanjon reke Jerme](https://www.zvonackabanja.net/kanjon-jerme/): Živopisna klisura u neposrednoj blizini banje
-- [Bazen Zvonačka Banja](https://www.zvonackabanja.net/bazen-zvonacka-banja/): Olimpijski bazeni sa termomineralnom vodom i sportski tereni
-- [Asenovo Kale](https://www.zvonackabanja.net/asenovo-kale/): Greben na 1032 m — gnezda surih orlova i pećina Vetrena Dupka
+- [Početna](https://www.zvonackabanja.net/): Glavni pregled banjskog kompleksa — bazeni, priroda, znamenitosti, smeštaj
+- [Vodič za Zvonačku Banju](https://www.zvonackabanja.net/vodic/): Kompletni vodič za posetioce — kako doći, šta leči, bazeni, atrakcije, smeštaj, koliko dana ostati
+- [Manastir Poganovo](https://www.zvonackabanja.net/manastir-poganovo/): Srednjovekovni manastir iz XIV veka (1395) sa izuzetnim freskama iz 1499. u kanjonu reke Jerme
+- [Kanjon reke Jerme](https://www.zvonackabanja.net/kanjon-jerme/): Živopisna klisura sa liticama visokim do 300 metara, pešačke staze i fotografija prirode
+- [Bazen Zvonačka Banja](https://www.zvonackabanja.net/bazen-zvonacka-banja/): Tri olimpijska bazena (2 zatvorena + 1 otvoreni) sa termomineralnom vodom 28°C, sportski tereni
+- [Asenovo Kale](https://www.zvonackabanja.net/asenovo-kale/): Krečnjački greben na 1032 m — jedino mesto u Srbiji sa gnezdima surih orlova, pećina Vetrena Dupka (4 km kanala)
+
+## Ključne činjenice
+
+- Tip: Vazdušna i balneološka banja
+- Lokacija: Kanjon reke Jerme, Pirotski okrug, jugoistočna Srbija
+- Koordinate: 43.1167°N, 22.6333°E
+- Nadmorska visina: 430 m
+- Termomineralna voda: 28°C, protok 9 l/s, bogata kalcijum-karbonatom i azotom
+- Bazeni: 3 olimpijska (2 zatvorena + 1 otvoreni)
+- Leči: reumatizam, bolesti lokomotornog aparata, nervne bolesti, povišeni krvni pritisak
 
 ## Kontakt
 
+- Web: https://www.zvonackabanja.net
+- Email: nikolakafta@gmail.com
 - Lokacija: Zvonačka Banja, Pirotski okrug, Srbija
-- Koordinate: 43.1167°N, 22.6333°E
