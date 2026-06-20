@@ -4,12 +4,12 @@
 **Site:** https://zvonackabanja.net
 **About:** Zvonačka Banja — banjski i rekreativni kompleks u jugoistočnoj Srbiji (termomineralni bazeni, kanjon Jerme, manastiri, priroda)
 **Started:** 2026-06-20
-**Current phase:** 01
+**Current phase:** 02
 
 ## Phases
 
 - [x] 00 — Foundation Audit ✅ (2026-06-20)
-- [ ] 01 — Technical SEO
+- [x] 01 — Technical SEO ✅ (2026-06-20)
 - [ ] 02 — Keyword Strategy
 - [ ] 03 — AEO Content
 - [ ] 04 — Link Building Foundation
@@ -97,13 +97,32 @@
 
 ---
 
-## Phase 01 — Technical SEO (next)
+## Phase 01 — Technical SEO Results
 
-Per toolkit guidance, Phase 01 covers:
-- Crawl budget optimization
-- URL structure audit
-- Internal linking structure
-- Page speed optimization
-- Mobile-friendliness verification
-- Security headers
-- Internationalization (hreflang if needed)
+**Crawlability (90/100):**
+- ✅ robots.txt sitemap URL fixed to www canonical domain
+- ✅ Sitemap includes all 5 pages with www domain
+- ⚠️ No `<lastmod>` in sitemap (Astro limitation — acceptable)
+
+**Security (60 → 90/100):**
+- ✅ Added 5 security headers in vercel.json: HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+
+**Internal Linking (fixed):**
+- ✅ Created RelatedAttractions component — each subpage now cross-links to 3 other attractions
+- Previously: subpages had only 1 inbound link each (from homepage Services)
+- Now: each subpage has 4+ internal links (homepage + 3 related attraction pages)
+
+**Schema (expanded):**
+- ✅ Added Organization schema on homepage
+
+**On-Page SEO (optimized):**
+- ✅ Optimized title tags on all 4 subpages — added descriptive keywords for better CTR
+- ✅ Expanded meta descriptions with unique selling points and specific details
+
+**URL Structure:** ✅ Clean, lowercase, hyphenated, max 2 levels deep
+**Mobile:** ✅ Responsive, viewport meta, 16px+ body text
+**HTTPS:** ✅ Forced via Vercel, non-www → www 301 redirect
+
+**Pending (needs user action):**
+- ⏳ Core Web Vitals — PageSpeed API rate-limited, test manually at pagespeed.web.dev
+- ⏳ Google Search Console — user needs to connect and share data
