@@ -1,42 +1,107 @@
 ---
 const testimonials = [
   {
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.",
-    name: "Sarah Mitchell",
-    role: "Wellness Enthusiast",
+    quote: "Zvonačka Banja je pravo skriveno blago Srbije. Termalna voda je fantastična, a mir koji ovde vlada ne može se naći nigde drugde. Definitivno se vraćamo!",
+    name: "Milica Jovanović",
+    role: "Posetilac iz Beograda",
   },
   {
-    quote: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
-    name: "James Whitmore",
-    role: "Holistic Health Advocate",
+    quote: "Kanjon reke Jerme nas je ostavio bez daha. Priroda je netaknuta, vazduh neverovatno čist, a domaćini izuzetno gostoljubivi. Preporučujem svima!",
+    name: "Dragan Petrović",
+    role: "Ljubitelj prirode",
   },
   {
-    quote: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.",
-    name: "Elena Rodriguez",
-    role: "Returning Client",
+    quote: "Posle samo nedelju dana kupanja u termalnoj vodi, bolovi u zglobovima su značajno popustili. Lekovita voda zaista čini čuda.",
+    name: "Gordana Nikolić",
+    role: "Redovan gost",
+  },
+  {
+    quote: "Manastir Poganovo i kanjon su nezaboravan doživljaj. Kombinacija kulturne baštine i prirodnih lepota čini ovo mesto jedinstvenim u Srbiji.",
+    name: "Stefan Đorđević",
+    role: "Posetilac iz Niša",
+  },
+  {
+    quote: "Idealno mesto za porodični odmor. Deca su uživala na bazenu, a mi u tišini i čistom planinskom vazduhu. Smeštaj u privatnim vilama je odličan.",
+    name: "Jelena Stanković",
+    role: "Porodični odmor",
+  },
+  {
+    quote: "Treći put dolazimo i svaki put otkrijemo nešto novo. Asenovo Kale pruža spektakularan pogled, a večeri uz domaću hranu su nezaboravne.",
+    name: "Marko Ilić",
+    role: "Redovan posetilac",
+  },
+  {
+    quote: "Kao neko ko živi u velikom gradu, Zvonačka Banja mi je pružila odmor kakav sam odavno trebao. Negativni joni u vazduhu se zaista osete.",
+    name: "Ana Todorović",
+    role: "Posetilac iz Novog Sada",
   },
 ];
 ---
 
 <section class="testimonials" id="testimonials">
   <div class="testimonials__inner container">
-    <div class="testimonials__header">
-      <span class="eyebrow">Kind Words</span>
-      <h2 class="testimonials__heading">What Our<br>Clients Say</h2>
+    <div class="testimonials__header" data-fade-up>
+      <span class="eyebrow">Utisci posetilaca</span>
+      <h2 class="testimonials__heading">Šta kažu<br>naši gosti</h2>
     </div>
-    <div class="testimonials__grid">
-      {testimonials.map((t) => (
-        <blockquote class="testimonials__card">
-          <p class="testimonials__quote">&ldquo;{t.quote}&rdquo;</p>
-          <footer class="testimonials__author">
-            <cite class="testimonials__name">{t.name}</cite>
-            <span class="testimonials__role">{t.role}</span>
-          </footer>
-        </blockquote>
-      ))}
+    <div class="testimonials__slider-wrap" data-fade-up>
+      <div class="swiper testimonials__swiper">
+        <div class="swiper-wrapper">
+          {testimonials.map((t) => (
+            <div class="swiper-slide">
+              <blockquote class="testimonials__card">
+                <p class="testimonials__quote">&ldquo;{t.quote}&rdquo;</p>
+                <footer class="testimonials__author">
+                  <cite class="testimonials__name">{t.name}</cite>
+                  <span class="testimonials__role">{t.role}</span>
+                </footer>
+              </blockquote>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="testimonials__nav">
+        <button class="testimonials__arrow testimonials__arrow--prev" aria-label="Prethodni testimonial">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="testimonials__arrow testimonials__arrow--next" aria-label="Sledeći testimonial">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css';
+
+  const swiper = new Swiper('.testimonials__swiper', {
+    modules: [Navigation],
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+    speed: 800,
+    navigation: {
+      prevEl: '.testimonials__arrow--prev',
+      nextEl: '.testimonials__arrow--next',
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
+    },
+    on: {
+      slideChangeTransitionStart() {
+        setTimeout(() => { swiper.animating = false; }, 850);
+      },
+    },
+  });
+</script>
 
 <style>
   .testimonials {
@@ -48,15 +113,13 @@ const testimonials = [
   .testimonials__inner {
     display: flex;
     flex-direction: column;
-    gap: 4em;
+    gap: 3em;
   }
 
   .testimonials__header {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    text-align: center;
-    align-items: center;
   }
 
   .testimonials__heading {
@@ -64,21 +127,49 @@ const testimonials = [
     line-height: 1.08;
   }
 
-  .testimonials__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5em;
+  .testimonials__slider-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+  }
+
+  .testimonials__swiper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .testimonials__swiper::before,
+  .testimonials__swiper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 5em;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .testimonials__swiper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg), transparent);
+  }
+
+  .testimonials__swiper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg), transparent);
   }
 
   .testimonials__card {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border-radius: 0.75em;
     padding: 2.5em 2em;
     display: flex;
     flex-direction: column;
     gap: 2em;
     justify-content: space-between;
+    height: 100%;
   }
 
   .testimonials__quote {
@@ -113,23 +204,44 @@ const testimonials = [
     color: var(--color-muted);
   }
 
-  @media (max-width: 991px) {
-    .testimonials__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .testimonials__nav {
+    display: flex;
+    gap: 1em;
+  }
 
+  .testimonials__arrow {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--color-heading);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .testimonials__arrow:hover {
+    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 991px) {
     .testimonials__heading {
       font-size: 2.25em;
     }
   }
 
   @media (max-width: 767px) {
-    .testimonials__grid {
-      grid-template-columns: 1fr;
-    }
-
     .testimonials__heading {
       font-size: 2em;
+    }
+
+    .testimonials__swiper::before,
+    .testimonials__swiper::after {
+      width: 1.5em;
     }
   }
 </style>

@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import "../styles/tailwind.css";
 
 interface Props {
   title?: string;
@@ -11,8 +10,8 @@ interface Props {
 }
 
 const {
-  title = "The Herbal Alchemist | Natural Remedies & Holistic Wellness",
-  description = "Heal naturally with handcrafted herbal remedies. The Herbal Alchemist offers personalized consultations, custom formulations, and holistic wellness guidance.",
+  title = "Zvonačka Banja | Lekovita vazdušna banja u jugoistočnoj Srbiji",
+  description = "Zvonačka Banja se nalazi na 670 m nadmorske visine, na obroncima Vlaške planine. Termomineralna voda temperature 28°C, bazeni, netaknuta priroda i kulturno-istorijske znamenitosti.",
   ogImage = "/og-image.jpg",
   schema,
   extraSchemas = [],
@@ -23,56 +22,33 @@ const ogImageURL = new URL(ogImage, Astro.site);
 
 const defaultSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Nikola Miljković",
+  "@type": "TouristAttraction",
+  "name": "Zvonačka Banja",
   "description": description,
   "url": canonicalURL.href,
   "image": ogImageURL.href,
-  "founder": {
-    "@type": "Person",
-    "name": "Nikola Miljković",
-    "jobTitle": "AI-Powered Web Developer",
-    "url": "https://www.nikolamiljkovic.live",
-    "knowsAbout": ["Web Development", "Webflow", "Astro", "UI/UX Design", "AI-Enhanced Workflows", "Landing Pages", "JavaScript", "CSS"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nis",
-      "addressCountry": "RS"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/nikola-miljkovic-542456108/",
-      "https://www.instagram.com/nidza____/",
-      "https://dribbble.com/nikola-miljkovic",
-      "https://www.behance.net/nikolamiljkovic5"
-    ]
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 43.3209,
-      "longitude": 21.8954
-    },
-    "description": "Worldwide (remote)"
-  },
-  "serviceType": ["Web Development", "Website Redesign", "Landing Page Design", "Webflow Development"],
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Nis",
+    "addressLocality": "Zvonačka Banja",
+    "addressRegion": "Pirotski okrug",
     "addressCountry": "RS"
   },
-  "sameAs": [
-    "https://www.linkedin.com/in/nikola-miljkovic-542456108/",
-    "https://www.instagram.com/nidza____/",
-    "https://dribbble.com/nikola-miljkovic",
-    "https://www.behance.net/nikolamiljkovic5"
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.1167,
+    "longitude": 22.6333
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Termomineralna voda 28°C" },
+    { "@type": "LocationFeatureSpecification", "name": "Otvoreni i zatvoreni bazeni" },
+    { "@type": "LocationFeatureSpecification", "name": "Sportski tereni" }
   ]
 };
 
 const pageSchema = schema || defaultSchema;
 ---
 
-<html lang="en">
+<html lang="sr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -94,8 +70,8 @@ const pageSchema = schema || defaultSchema;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="The Herbal Alchemist" />
+    <meta property="og:locale" content="sr_RS" />
+    <meta property="og:site_name" content="Zvonačka Banja" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />

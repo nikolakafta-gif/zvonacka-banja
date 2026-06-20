@@ -1,40 +1,58 @@
 ---
-const services = [
+const attractions = [
   {
-    title: "Herbal Consultations",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Manastir Poganovo",
+    description: "Najpoznatiji od obližnjih srednjovekovnih manastira, potiče iz 14. veka. U blizini su i manastiri Sukovo i Temska.",
+    image: "/assets/images/card-manastir-poganovo.jpg",
+    alt: "Manastir Poganovo u kanjonu reke Jerme",
+    href: "/manastir-poganovo",
   },
   {
-    title: "Custom Formulations",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    title: "Kanjon reke Jerme",
+    description: "Živopisna klisura reke Jerme u neposrednoj blizini banje. Netaknuta priroda idealna za šetnje, izlete i fotografiju.",
+    image: "/assets/images/card-kanjon-jerme.jpg",
+    alt: "Kanjon reke Jerme sa visokim liticama",
+    href: "/kanjon-jerme",
   },
   {
-    title: "Wellness Programs",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.",
+    title: "Bazen Zvonačka Banja",
+    description: "Dva zatvorena i jedan otvoreni olimpijski bazen sa mineralnom vodom temperature 28°C. Tereni za košarku, mali fudbal, odbojku i tenis.",
+    image: "/assets/images/card-bazen-zvonacka-banja.jpg",
+    alt: "Otvoreni olimpijski bazen sa mineralnom vodom u Zvonačkoj Banji",
+    href: "/bazen-zvonacka-banja",
   },
   {
-    title: "Seasonal Remedies",
-    description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    title: "Asenovo Kale",
+    description: "Greben na nadmorskoj visini od 1032 m, jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. U blizini je i pećina Vetrena Dupka sa kanalima dužine 4 km.",
+    image: "/assets/images/card-asenovo-kale.jpg",
+    alt: "Asenovo Kale sa panoramskim pogledom",
+    href: "/asenovo-kale",
   },
 ];
 ---
 
 <section class="services" id="services">
   <div class="services__inner container">
-    <div class="services__header">
-      <span class="eyebrow">What We Offer</span>
-      <h2 class="services__heading">Ancient Wisdom,<br>Modern Healing</h2>
+    <div class="services__header" data-fade-up>
+      <span class="eyebrow">Šta posetiti</span>
+      <h2 class="services__heading">Zvonačka Banja,<br>srpski Bali</h2>
       <p class="services__intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+        Okolina Zvonačke Banje krije prirodne lepote i kulturno-istorijske znamenitosti. Postoje mogućnosti za lov, ribolov i planinarenje po Vlaškoj i Staroj planini.
       </p>
     </div>
-    <div class="services__grid">
-      {services.map((service, i) => (
-        <div class="services__card">
-          <span class="services__number">{String(i + 1).padStart(2, '0')}</span>
-          <h3 class="services__card-title">{service.title}</h3>
-          <p class="services__card-text">{service.description}</p>
-        </div>
+    <div class="services__grid" data-stagger>
+      {attractions.map((item) => (
+        <a href={item.href} class="services__card">
+          <div class="services__card-image-wrap">
+            <img src={item.image} alt={item.alt} width="600" height="400" loading="lazy" />
+          </div>
+          <h3 class="services__card-title">{item.title}</h3>
+          <p class="services__card-text">{item.description}</p>
+          <span class="services__card-cta">
+            Saznaj više
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
       ))}
     </div>
   </div>
@@ -67,7 +85,7 @@ const services = [
 
   .services__intro {
     font-size: var(--text-body);
-    color: var(--color-text);
+    color: var(--color-text-light);
     line-height: 1.8;
   }
 
@@ -80,36 +98,78 @@ const services = [
   .services__card {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 2em 1.75em;
+    border-radius: 0.75em;
     display: flex;
     flex-direction: column;
+    padding: 0.75em;
+    padding-bottom: 1.5em;
     gap: 1em;
-    transition: background-color var(--transition-base);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+    cursor: pointer;
   }
 
   .services__card:hover {
-    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-0.5em);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 
-  .services__number {
-    font-family: var(--font-heading);
-    font-size: 2em;
-    font-weight: 400;
-    color: var(--color-muted);
-    line-height: 1;
+  .services__card-image-wrap {
+    position: relative;
+    border-radius: 0.5em;
+    overflow: hidden;
+  }
+
+  .services__card-image-wrap img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .services__card:hover .services__card-image-wrap img {
+    transform: scale(1.05);
+  }
+
+  .services__card-image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(22, 32, 26, 0.1) 0%, rgba(22, 32, 26, 0.4) 100%);
+    pointer-events: none;
   }
 
   .services__card-title {
     font-size: var(--text-h5);
     text-transform: none;
     letter-spacing: 0;
+    padding-inline: 0.75em;
   }
 
   .services__card-text {
     font-size: 0.8125em;
-    color: var(--color-muted);
+    color: var(--color-text-light);
     line-height: 1.7;
+    padding-inline: 0.75em;
+  }
+
+  .services__card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.8125em;
+    font-weight: 500;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-ui);
+    padding-inline: 0.75em;
+    margin-top: auto;
+    transition: color 0.3s ease, gap 0.3s ease;
+  }
+
+  .services__card:hover .services__card-cta {
+    color: var(--color-heading);
+    gap: 0.75em;
   }
 
   @media (max-width: 991px) {

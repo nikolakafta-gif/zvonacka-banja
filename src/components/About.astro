@@ -3,19 +3,22 @@
 
 <section class="about" id="about">
   <div class="about__inner container">
-    <div class="about__image">
-      <div class="about__image-placeholder" role="img" aria-label="The Alchemist portrait"></div>
+    <div class="about__content" data-fade-up>
+      <span class="eyebrow about__eyebrow">Okolina i Aktivnosti</span>
+      <h2 class="about__heading">Dolina reke Jerme</h2>
+      <p class="about__text">
+        Do Zvonačke Banje se dolazi regionalnim putevima iz pravca Pirota i Babušnice, dolinom reke Jerme. U neposrednoj blizini banje nalazi se živopisna klisura reke Jerme. Netaknuta priroda koja okružuje banju prijatna je za šetnje i izlete.
+      </p>
+      <p class="about__text">
+        Greben Asenovo Kale, na nadmorskoj visini od 1032 m, jedino je mesto u Srbiji gde se mogu videti gnezda surih orlova. U blizini je i atraktivna pećina Vetrena Dupka, sa kanalima dužine 4 km. Gosti mogu da posete i obližnje srednjovekovne manastire, od kojih je najpoznatiji manastir Poganovo iz 14. veka, kao i manastire Sukovo i Temska.
+      </p>
+      <p class="about__text">
+        Postoje mogućnosti za lov, ribolov i planinarenje po Vlaškoj i Staroj planini.
+      </p>
     </div>
-    <div class="about__card">
-      <span class="eyebrow about__eyebrow">Meet the Herbalist</span>
-      <h2 class="about__heading">I'm [Name],<br>The Alchemist</h2>
-      <p class="about__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-      </p>
-      <p class="about__text">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a href="#contact" class="btn btn--dark about__btn">Get in Touch</a>
+    <div class="about__image-wrap" data-reveal>
+      <img src="/assets/images/about-put-do-banje.jpg" alt="Put do Zvonačke Banje kroz dolinu reke Jerme" width="1200" height="800" loading="lazy" />
+      <div class="about__image-overlay"></div>
     </div>
   </div>
 </section>
@@ -31,57 +34,56 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3em;
-    align-items: center;
+    align-items: stretch;
   }
 
-  .about__image-placeholder {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    background-color: var(--color-bg-header);
-    border-radius: var(--radius-sm);
-    background-image: url('/assets/images/about-herbalist.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .about__card {
-    background-color: var(--color-cream);
-    padding: 3.5em 3em;
-    border-radius: var(--radius-sm);
+  .about__content {
     display: flex;
     flex-direction: column;
     gap: 1.25em;
   }
 
   .about__eyebrow {
-    color: #7c7a6a;
+    color: var(--color-muted);
   }
 
   .about__heading {
     font-size: var(--text-h2);
-    color: var(--color-ink);
+    color: var(--color-heading);
     line-height: 1.08;
-    text-transform: none;
   }
 
   .about__text {
     font-size: var(--text-body);
-    color: var(--color-ink);
+    color: var(--color-text-light);
     line-height: 1.8;
     font-weight: 300;
   }
 
-  .about__btn {
-    margin-top: 0.5em;
+  .about__image-wrap {
+    position: relative;
+    border-radius: 0.75em;
+    overflow: hidden;
+  }
+
+  .about__image-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .about__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31, 44, 34, 0.15) 0%, rgba(31, 44, 34, 0.4) 100%);
+    pointer-events: none;
   }
 
   @media (max-width: 991px) {
     .about__inner {
-      gap: 2em;
-    }
-
-    .about__card {
-      padding: 2.5em 2em;
+      grid-template-columns: 1fr;
+      gap: 1.25em;
     }
 
     .about__heading {
@@ -91,15 +93,7 @@
 
   @media (max-width: 767px) {
     .about__inner {
-      grid-template-columns: 1fr;
-    }
-
-    .about__image-placeholder {
-      aspect-ratio: 16 / 9;
-    }
-
-    .about__card {
-      padding: 2em 1.5em;
+      gap: 1em;
     }
 
     .about__heading {

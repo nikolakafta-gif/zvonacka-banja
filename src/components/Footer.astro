@@ -4,45 +4,49 @@ const currentYear = new Date().getFullYear();
 
 <footer class="footer">
   <div class="footer__inner container">
-    <div class="footer__top">
+    <div class="footer__top" data-fade-up>
       <div class="footer__brand">
-        <a href="/" class="footer__logo">The Herbal Alchemist</a>
+        <a href="/" class="footer__logo">Zvonačka Banja</a>
         <p class="footer__tagline">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rooted in nature, guided by tradition.
+          Lekovita vazdušna banja u jugoistočnoj Srbiji, na obroncima Vlaške planine. Termomineralna voda, čist vazduh i netaknuta priroda.
         </p>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
         <div class="footer__col">
-          <h3 class="footer__col-title">Navigate</h3>
+          <h3 class="footer__col-title">Navigacija</h3>
           <ul class="footer__list">
-            <li><a href="#about" class="footer__link">About</a></li>
-            <li><a href="#services" class="footer__link">Services</a></li>
-            <li><a href="#testimonials" class="footer__link">Testimonials</a></li>
-            <li><a href="#contact" class="footer__link">Contact</a></li>
+            <li><a href="#home" class="footer__link">Početna</a></li>
+            <li><a href="#about" class="footer__link">O Banji</a></li>
+            <li><a href="#services" class="footer__link">Šta Posetiti</a></li>
+            <li><a href="#testimonials" class="footer__link">Utisci</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h3 class="footer__col-title">Services</h3>
+          <h3 class="footer__col-title">Sadržaj</h3>
           <ul class="footer__list">
-            <li><a href="#" class="footer__link">Herbal Consultations</a></li>
-            <li><a href="#" class="footer__link">Custom Formulations</a></li>
-            <li><a href="#" class="footer__link">Wellness Programs</a></li>
-            <li><a href="#" class="footer__link">Seasonal Remedies</a></li>
+            <li><a href="#contact" class="footer__link">Bazenski kompleks</a></li>
+            <li><a href="https://www.trivago.rs/sr/odr/hotel-a-zvona%C4%8Dka-banja-srbija?search=200-418352" target="_blank" rel="noopener noreferrer" class="footer__link">Smeštaj</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h3 class="footer__col-title">Connect</h3>
+          <h3 class="footer__col-title">Kontakt</h3>
           <ul class="footer__list">
-            <li><a href="#" class="footer__link">Instagram</a></li>
-            <li><a href="#" class="footer__link">Facebook</a></li>
-            <li><a href="#" class="footer__link">Pinterest</a></li>
-            <li><a href="mailto:hello@herbalalchemist.com" class="footer__link">Email Us</a></li>
+            <li><a href="https://maps.google.com/?q=Zvonačka+Banja" target="_blank" rel="noopener noreferrer" class="footer__link">Zvonačka Banja, Srbija</a></li>
           </ul>
         </div>
       </nav>
     </div>
     <div class="footer__bottom">
-      <p class="footer__copy">&copy; {currentYear} The Herbal Alchemist. All rights reserved.</p>
+      <p class="footer__copy">&copy; {currentYear} Zvonačka Banja. Sva prava zadržana.</p>
+      <a href="https://www.nikolamiljkovic.live" target="_blank" rel="noopener noreferrer" class="footer__credit">
+        Sajt izradio
+        <span class="footer__credit-name">
+          Nikola Miljković
+          <svg class="footer__credit-underline" viewBox="0 0 300 20" preserveAspectRatio="none">
+            <path d="M 0,10 Q 75,0 150,10 Q 225,20 300,10" stroke="currentColor" stroke-width="2" fill="none" />
+          </svg>
+        </span>
+      </a>
     </div>
   </div>
 </footer>
@@ -123,11 +127,73 @@ const currentYear = new Date().getFullYear();
   .footer__bottom {
     border-top: 1px solid var(--color-border);
     padding-block: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
   }
 
   .footer__copy {
     font-size: 0.6875em;
     color: var(--color-muted);
+  }
+
+  .footer__credit {
+    font-size: 0.875em;
+    color: var(--color-muted);
+    transition: color var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+  }
+
+  .footer__credit:hover {
+    color: var(--color-heading);
+  }
+
+  .footer__credit-name {
+    position: relative;
+    font-weight: 500;
+    color: var(--color-text-light);
+    transition: color var(--transition-base);
+    animation: credit-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes credit-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .footer__credit:hover .footer__credit-name {
+    color: var(--color-heading);
+    animation: none;
+    opacity: 1;
+  }
+
+  .footer__credit-underline {
+    position: absolute;
+    bottom: -0.3em;
+    left: 0;
+    width: 100%;
+    height: 0.5em;
+    color: var(--color-heading);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer__credit-underline path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    transition: stroke-dashoffset 0s;
+  }
+
+  .footer__credit:hover .footer__credit-underline {
+    opacity: 1;
+  }
+
+  .footer__credit:hover .footer__credit-underline path {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.8s ease-in-out;
   }
 
   @media (max-width: 991px) {
@@ -140,6 +206,13 @@ const currentYear = new Date().getFullYear();
   @media (max-width: 767px) {
     .footer__nav {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75em;
     }
   }
 

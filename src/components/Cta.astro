@@ -1,74 +1,413 @@
 ---
+const panels = [
+  {
+    title: "Bazenski kompleks",
+    description: "Dva zatvorena i jedan otvoreni olimpijski bazen sa mineralnom vodom",
+    image: "/assets/images/hero-bazeni-2.jpg",
+    icon: "pool",
+  },
+  {
+    title: "Radno vreme",
+    description: "Svakog dana od 09:00 do 18:00 tokom letnje sezone",
+    image: "/assets/images/hero-bazeni-3.jpg",
+    icon: "clock",
+  },
+  {
+    title: "Cene ulaznica",
+    description: "Odrasli 300 din · Deca 200 din · Ležaljke dostupne",
+    image: "/assets/images/pool-bazeni-4.jpg",
+    icon: "ticket",
+  },
+  {
+    title: "Lekovita voda",
+    description: "Temperatura 28°C, protok 9 l/s, za piće, kupanje i terapiju",
+    image: "/assets/images/hero-bazeni-6.jpg",
+    icon: "water",
+  },
+  {
+    title: "Ambijent",
+    description: 'U sklopu nekadašnjeg kompleksa hotela "Mir"',
+    image: "/assets/images/hero-bazeni-9.jpg",
+    icon: "mountain",
+  },
+];
+
+const iconSvgs: Record<string, string> = {
+  pool: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c1.5-1.5 3.5-1.5 5 0s3.5 1.5 5 0 3.5-1.5 5 0 3.5 1.5 5 0"/><path d="M2 17c1.5-1.5 3.5-1.5 5 0s3.5 1.5 5 0 3.5-1.5 5 0 3.5 1.5 5 0"/><path d="M8 4v4M12 4v4M16 4v4"/></svg>',
+  clock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+  ticket: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg>',
+  water: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-5 6.5-5 11a5 5 0 0 0 10 0c0-4.5-5-11-5-11Z"/></svg>',
+  mountain: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>',
+};
 ---
 
-<section class="cta" id="contact">
-  <div class="cta__inner container">
-    <div class="cta__content">
-      <span class="eyebrow">Begin Your Journey</span>
-      <h2 class="cta__heading">Ready to Embrace<br>Natural Healing?</h2>
-      <p class="cta__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Schedule your consultation today.
-      </p>
-      <div class="cta__buttons">
-        <a href="#" class="btn">Book a Consult</a>
-        <a href="#services" class="btn btn--outline">Explore Remedies</a>
+<section class="selector" id="contact">
+  <div class="selector__inner container">
+    <div class="selector__header" data-fade-up>
+      <span class="eyebrow">Bazenski kompleks</span>
+      <h2 class="selector__heading">Otvoreni bazeni<br>Zvonačke Banje</h2>
+      <p class="selector__intro">U Zvonačkoj Banji postoje dva zatvorena i jedan otvoreni olimpijski bazen sa mineralnom vodom, kao i tereni za košarku, mali fudbal, odbojku i tenis.</p>
+    </div>
+
+    <!-- Desktop/Tablet: expanding panels -->
+    <div class="selector__panels">
+      {panels.map((panel, i) => (
+        <div
+          class={`selector__panel ${i === 0 ? 'is-active' : ''}`}
+          data-index={i}
+          style={`background-image: url(${panel.image})`}
+        >
+          <div class="selector__panel-overlay"></div>
+          <div class="selector__panel-label">
+            <div class="selector__panel-icon">
+              <Fragment set:html={iconSvgs[panel.icon]} />
+            </div>
+            <div class="selector__panel-info">
+              <div class="selector__panel-title">{panel.title}</div>
+              <div class="selector__panel-desc">{panel.description}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mobile: swiper cards -->
+    <div class="selector__mobile" data-fade-up>
+      <div class="swiper selector__swiper">
+        <div class="swiper-wrapper">
+          {panels.map((panel) => (
+            <div class="swiper-slide">
+              <div class="selector__card">
+                <div class="selector__card-image">
+                  <img src={panel.image} alt={panel.title} width="600" height="400" loading="lazy" />
+                  <div class="selector__card-image-overlay"></div>
+                </div>
+                <div class="selector__card-body">
+                  <div class="selector__card-icon">
+                    <Fragment set:html={iconSvgs[panel.icon]} />
+                  </div>
+                  <div class="selector__card-text">
+                    <div class="selector__card-title">{panel.title}</div>
+                    <div class="selector__card-desc">{panel.description}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="selector__nav">
+        <button class="selector__arrow selector__arrow--prev" aria-label="Prethodna kartica">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="selector__arrow selector__arrow--next" aria-label="Sledeća kartica">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 </section>
 
+<script>
+  import Swiper from 'swiper';
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css';
+
+  // Desktop/Tablet: expanding panels
+  const panelEls = document.querySelectorAll('.selector__panel') as NodeListOf<HTMLElement>;
+  const total = panelEls.length;
+  const ACTIVE_PCT = 70;
+  const INACTIVE_PCT = (100 - ACTIVE_PCT) / (total - 1);
+
+  function setActive(panel: HTMLElement) {
+    panelEls.forEach((p) => {
+      const isActive = p === panel;
+      p.classList.toggle('is-active', isActive);
+      p.style.width = isActive ? `${ACTIVE_PCT}%` : `${INACTIVE_PCT}%`;
+    });
+  }
+
+  panelEls.forEach((p) => {
+    p.style.transition = 'width 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    p.style.width = p.classList.contains('is-active') ? `${ACTIVE_PCT}%` : `${INACTIVE_PCT}%`;
+  });
+
+  panelEls.forEach((panel) => {
+    panel.addEventListener('click', () => {
+      if (panel.classList.contains('is-active')) return;
+      setActive(panel);
+    });
+  });
+
+  // Mobile: swiper
+  new Swiper('.selector__swiper', {
+    modules: [Navigation],
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    speed: 600,
+    navigation: {
+      prevEl: '.selector__arrow--prev',
+      nextEl: '.selector__arrow--next',
+    },
+  });
+</script>
+
 <style>
-  .cta {
+  .selector {
     width: 100%;
     background-color: var(--color-bg);
     padding-block: var(--spacing-section);
     border-top: 1px solid var(--color-border);
   }
 
-  .cta__inner {
-    display: flex;
-    justify-content: center;
-  }
-
-  .cta__content {
+  .selector__inner {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5em;
+    gap: 3em;
+  }
+
+  .selector__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     max-width: 36em;
   }
 
-  .cta__heading {
+  .selector__heading {
     font-size: var(--text-h2);
     line-height: 1.08;
   }
 
-  .cta__text {
+  .selector__intro {
     font-size: var(--text-body);
     color: var(--color-text);
     line-height: 1.8;
   }
 
-  .cta__buttons {
+  /* Desktop/Tablet panels */
+  .selector__panels {
+    display: flex;
+    gap: 0.25em;
+    width: 100%;
+    height: 28em;
+    overflow: hidden;
+    border-radius: 0.75em;
+  }
+
+  .selector__panel {
+    position: relative;
+    flex: 0 0 auto;
+    min-width: 3.75em;
+    background-size: cover;
+    background-position: center;
+    background-color: #18181b;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-radius: 0.5em;
+  }
+
+  .selector__panel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      transparent 100%
+    );
+    pointer-events: none;
+    transition: opacity 0.7s ease;
+  }
+
+  .selector__panel:not(.is-active) .selector__panel-overlay {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .selector__panel-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.25em;
+    display: flex;
+    align-items: center;
+    gap: 0.875em;
+    padding-inline: 1.25em;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .selector__panel-icon {
+    min-width: 2.75em;
+    max-width: 2.75em;
+    height: 2.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(31, 44, 34, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-heading);
+    flex-shrink: 0;
+  }
+
+  .selector__panel-info {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .selector__panel-title {
+    font-family: var(--font-heading);
+    font-size: 1.125em;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(1.5em);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .selector__panel-desc {
+    font-size: 0.875em;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transform: translateX(1.5em);
+    transition: opacity 0.7s ease 0.05s, transform 0.7s ease 0.05s;
+  }
+
+  .selector__panel.is-active .selector__panel-title,
+  .selector__panel.is-active .selector__panel-desc {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Mobile swiper - hidden on desktop */
+  .selector__mobile {
+    display: none;
+  }
+
+  .selector__swiper {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 0.75em;
+  }
+
+  .selector__card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75em;
+    overflow: hidden;
+  }
+
+  .selector__card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .selector__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .selector__card-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+    pointer-events: none;
+  }
+
+  .selector__card-body {
+    display: flex;
+    align-items: center;
+    gap: 0.875em;
+    padding: 1.25em;
+  }
+
+  .selector__card-icon {
+    min-width: 2.75em;
+    max-width: 2.75em;
+    height: 2.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(31, 44, 34, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-heading);
+    flex-shrink: 0;
+  }
+
+  .selector__card-title {
+    font-family: var(--font-heading);
+    font-size: 1.125em;
+    font-weight: 500;
+    color: var(--color-heading);
+  }
+
+  .selector__card-desc {
+    font-size: 0.8125em;
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  .selector__nav {
     display: flex;
     gap: 1em;
-    margin-top: 0.5em;
+  }
+
+  .selector__arrow {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--color-heading);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .selector__arrow:hover {
+    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 991px) {
+    .selector__heading {
+      font-size: 2.25em;
+    }
+
+    .selector__panels {
+      height: 24em;
+    }
   }
 
   @media (max-width: 767px) {
-    .cta__heading {
+    .selector__heading {
       font-size: 2em;
     }
 
-    .cta__buttons {
-      flex-direction: column;
-      width: 100%;
+    .selector__panels {
+      display: none;
     }
 
-    .cta__buttons .btn {
-      width: 100%;
-      justify-content: center;
+    .selector__mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
     }
   }
 </style>

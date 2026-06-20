@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Bazen Zvonačka Banja | Zvonačka Banja"
+  description="Dva zatvorena i jedan otvoreni olimpijski bazen sa mineralnom vodom temperature 28°C. Tereni za košarku, mali fudbal, odbojku i tenis."
+>
+  <Navbar />
+  <main id="main-content">
+    <section class="attraction-hero">
+      <div class="attraction-hero__bg">
+        <div class="attraction-hero__overlay"></div>
+      </div>
+      <div class="attraction-hero__inner container">
+        <a href="/#services" class="attraction-hero__back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          Nazad
+        </a>
+        <span class="eyebrow">Šta Posetiti</span>
+        <h1 class="attraction-hero__title">Bazen Zvonačka<br><span class="attraction-hero__accent">Banja</span></h1>
+      </div>
+    </section>
+
+    <section class="attraction-content">
+      <div class="attraction-content__inner container">
+        <div class="attraction-content__text" data-fade-up>
+          <p>
+            U Zvonačkoj Banji postoje dva zatvorena i jedan otvoreni olimpijski bazen sa mineralnom vodom. Bazeni su punjeni termomineralnom vodom temperature 28°C i protoka 9 litara u sekundi, koja se koristi za piće i kupanje.
+          </p>
+          <p>
+            Pored bazena, u sklopu kompleksa nalaze se tereni za košarku, mali fudbal, odbojku i tenis. Kompleks je smešten u okruženju nekadašnjeg hotela „Mir", u netaknutoj prirodi kanjona reke Jerme.
+          </p>
+          <p>
+            Prirodni lekoviti činioci koriste se za prevenciju i lečenje, sa primenom modernih terapijskih tehnika: hidroterapija, elektroterapija, kineziterapija, parafinoterapija i laseroterapija, uz pešačenje stazama zdravlja.
+          </p>
+          <p>
+            U Zvonačkoj Banji se leče: bolesti lokomotornog aparata, nervne bolesti, povišeni krvni pritisak, poremećaji periferne cirkulacije, reumatizam, menadžerske bolesti, klimakterične tegobe i upalne promene na očima.
+          </p>
+        </div>
+        <div class="attraction-content__image" data-reveal>
+          <img src="/assets/images/hero-bazeni-10.jpg" alt="Otvoreni olimpijski bazen sa mineralnom vodom u Zvonačkoj Banji" width="1200" height="800" loading="lazy" />
+          <div class="attraction-content__image-overlay"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .attraction-hero {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 5em;
+    overflow: hidden;
+  }
+
+  .attraction-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-color: #2a3a2d;
+    background-image: url('/assets/images/hero-bazeni-8.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .attraction-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(31,44,34,0.3) 0%, rgba(31,44,34,0.8) 100%);
+  }
+
+  .attraction-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25em;
+    padding-block: 4em;
+  }
+
+  .attraction-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-ui);
+    transition: color var(--transition-base);
+  }
+
+  .attraction-hero__back:hover {
+    color: var(--color-heading);
+  }
+
+  .attraction-hero__title {
+    font-size: var(--text-h1);
+    line-height: 1.0;
+  }
+
+  .attraction-hero__accent {
+    font-style: italic;
+  }
+
+  .attraction-content {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: var(--spacing-section);
+  }
+
+  .attraction-content__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+    align-items: stretch;
+  }
+
+  .attraction-content__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .attraction-content__text p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .attraction-content__image {
+    position: relative;
+    border-radius: 0.75em;
+    overflow: hidden;
+  }
+
+  .attraction-content__image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .attraction-content__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31, 44, 34, 0.15) 0%, rgba(31, 44, 34, 0.4) 100%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 991px) {
+    .attraction-hero__title {
+      font-size: 3em;
+    }
+
+    .attraction-content__inner {
+      grid-template-columns: 1fr;
+      gap: 1.25em;
+    }
+
+    .attraction-content__image {
+      height: 20em;
+    }
+
+    .attraction-content__image img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .attraction-hero {
+      min-height: 60vh;
+    }
+
+    .attraction-hero__title {
+      font-size: 2.5em;
+    }
+
+    .attraction-content__inner {
+      gap: 1em;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .attraction-hero__title {
+      font-size: 2em;
+    }
+  }
+</style>

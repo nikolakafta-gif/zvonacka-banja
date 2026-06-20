@@ -38,7 +38,7 @@
       "port": 4327
     },
     {
-      "name": "herbal",
+      "name": "dev",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["astro", "dev", "--port", "4340"],
       "port": 4340

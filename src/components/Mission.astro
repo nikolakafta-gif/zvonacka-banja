@@ -3,19 +3,22 @@
 
 <section class="mission">
   <div class="mission__inner container">
-    <div class="mission__content">
-      <span class="eyebrow">Nourish Your Body</span>
-      <h2 class="mission__heading">Heal. Naturally.<br>Embrace Your Vitality.</h2>
+    <div class="mission__content" data-fade-up>
+      <span class="eyebrow">O Banji</span>
+      <h2 class="mission__heading">Zvonačka Banja</h2>
       <p class="mission__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Zvonačka Banja se nalazi u jugoistočnoj Srbiji, 30 km od Pirota. Leži na šumovitim obroncima Vlaške planine, na nadmorskoj visini od 670 m, pa se ubraja u banje sa najvećom nadmorskom visinom u našoj zemlji. Banja ima obeležje i klimatskog mesta, zbog specifične ruže vetrova i velikog broja negativnih jona u vazduhu.
       </p>
       <p class="mission__text">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+        Rimski bazen i drugi arheološki nalazi govore da je Zvonačka Banja bila poznata u antičko doba i u vreme srednjovekovne Srbije. Banja, koja je naziv dobila po obližnjem selu Zvonce, kao lečilište je obnovljena 1912. godine.
       </p>
-      <a href="#services" class="btn btn--outline mission__btn">Explore Natural Remedies</a>
+      <p class="mission__text">
+        U Zvonačkoj Banji postoje izvori mineralne vode temperature 28°C i protoka 9 litara u sekundi, koji se koriste za piće i kupanje. Prirodni lekoviti činioci koriste se za prevenciju i lečenje, sa primenom modernih terapijskih tehnika: hidroterapija, elektroterapija, kineziterapija, parafinoterapija i laseroterapija, uz pešačenje stazama zdravlja.
+      </p>
     </div>
-    <div class="mission__image">
-      <div class="mission__image-placeholder" role="img" aria-label="Herbal remedies preparation"></div>
+    <div class="mission__image-wrap" data-reveal>
+      <img src="/assets/images/about-zvonacka-banja.jpg" alt="Pogled na Zvonačku Banju u jugoistočnoj Srbiji" width="1000" height="664" loading="lazy" />
+      <div class="mission__image-overlay"></div>
     </div>
   </div>
 </section>
@@ -31,7 +34,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4em;
-    align-items: center;
+    align-items: stretch;
   }
 
   .mission__content {
@@ -47,27 +50,34 @@
 
   .mission__text {
     font-size: var(--text-body);
-    color: var(--color-text);
+    color: var(--color-text-light);
     line-height: 1.8;
   }
 
-  .mission__btn {
-    margin-top: 0.5em;
+  .mission__image-wrap {
+    position: relative;
+    border-radius: 0.75em;
+    overflow: hidden;
   }
 
-  .mission__image-placeholder {
+  .mission__image-wrap img {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    background-color: var(--color-bg-header);
-    border-radius: var(--radius-sm);
-    background-image: url('/assets/images/mission.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .mission__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31, 44, 34, 0.15) 0%, rgba(31, 44, 34, 0.4) 100%);
+    pointer-events: none;
   }
 
   @media (max-width: 991px) {
     .mission__inner {
-      gap: 2.5em;
+      grid-template-columns: 1fr;
+      gap: 1.25em;
     }
 
     .mission__heading {
@@ -77,20 +87,11 @@
 
   @media (max-width: 767px) {
     .mission__inner {
-      grid-template-columns: 1fr;
-      gap: 2em;
+      gap: 1em;
     }
 
     .mission__heading {
       font-size: 2em;
-    }
-
-    .mission__image {
-      order: -1;
-    }
-
-    .mission__image-placeholder {
-      aspect-ratio: 16 / 9;
     }
   }
 </style>

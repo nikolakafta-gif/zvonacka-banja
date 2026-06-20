@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Kanjon reke Jerme | Zvonačka Banja"
+  description="Živopisna klisura reke Jerme u neposrednoj blizini Zvonačke Banje. Netaknuta priroda idealna za šetnje, izlete i fotografiju."
+>
+  <Navbar />
+  <main id="main-content">
+    <section class="attraction-hero">
+      <div class="attraction-hero__bg">
+        <div class="attraction-hero__overlay"></div>
+      </div>
+      <div class="attraction-hero__inner container">
+        <a href="/#services" class="attraction-hero__back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          Nazad
+        </a>
+        <span class="eyebrow">Šta Posetiti</span>
+        <h1 class="attraction-hero__title">Kanjon reke<br><span class="attraction-hero__accent">Jerme</span></h1>
+      </div>
+    </section>
+
+    <section class="attraction-content">
+      <div class="attraction-content__inner container">
+        <div class="attraction-content__text" data-fade-up>
+          <p>
+            U neposrednoj blizini Zvonačke Banje nalazi se živopisna klisura reke Jerme. Do banje se dolazi regionalnim putevima iz pravca Pirota i Babušnice, dolinom reke Jerme. Sam put kroz kanjon je doživljaj za sebe.
+          </p>
+          <p>
+            Kanjon je poznat po stenovitim liticama, bistrim vodama i netaknutoj prirodi koja ga okružuje. Idealan je za pešačenje, fotografiju i uživanje u tišini daleko od gradske buke. Staze uz reku vode kroz spektakularne predele i pružaju nezaboravne poglede na vertikalne litice i gustu vegetaciju.
+          </p>
+          <p>
+            Netaknuta priroda koja okružuje banju prijatna je za šetnje i izlete. U blizini kanjona nalazi se i greben Asenovo Kale na nadmorskoj visini od 1032 m, jedino mesto u Srbiji gde se mogu videti gnezda surih orlova, kao i atraktivna pećina Vetrena Dupka sa kanalima dužine 4 km.
+          </p>
+          <p>
+            Postoje mogućnosti za lov, ribolov i planinarenje po Vlaškoj i Staroj planini. Gosti mogu posetiti i obližnje srednjovekovne manastire, od kojih je najpoznatiji manastir Poganovo iz 14. veka, kao i manastire Sukovo i Temska.
+          </p>
+        </div>
+        <div class="attraction-content__image" data-reveal>
+          <img src="/assets/images/kanjon-jerme-content.jpg" alt="Kanjon reke Jerme sa visokim liticama" width="1200" height="800" loading="lazy" />
+          <div class="attraction-content__image-overlay"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .attraction-hero {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 5em;
+    overflow: hidden;
+  }
+
+  .attraction-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-color: #2a3a2d;
+    background-image: url('/assets/images/card-kanjon-jerme.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .attraction-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(31,44,34,0.3) 0%, rgba(31,44,34,0.8) 100%);
+  }
+
+  .attraction-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25em;
+    padding-block: 4em;
+  }
+
+  .attraction-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-ui);
+    transition: color var(--transition-base);
+  }
+
+  .attraction-hero__back:hover {
+    color: var(--color-heading);
+  }
+
+  .attraction-hero__title {
+    font-size: var(--text-h1);
+    line-height: 1.0;
+  }
+
+  .attraction-hero__accent {
+    font-style: italic;
+  }
+
+  .attraction-content {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding-block: var(--spacing-section);
+  }
+
+  .attraction-content__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+    align-items: stretch;
+  }
+
+  .attraction-content__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .attraction-content__text p {
+    font-size: var(--text-body);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .attraction-content__image {
+    position: relative;
+    border-radius: 0.75em;
+    overflow: hidden;
+  }
+
+  .attraction-content__image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .attraction-content__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31, 44, 34, 0.15) 0%, rgba(31, 44, 34, 0.4) 100%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 991px) {
+    .attraction-hero__title {
+      font-size: 3em;
+    }
+
+    .attraction-content__inner {
+      grid-template-columns: 1fr;
+      gap: 1.25em;
+    }
+
+    .attraction-content__image {
+      height: 20em;
+    }
+
+    .attraction-content__image img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .attraction-hero {
+      min-height: 60vh;
+    }
+
+    .attraction-hero__title {
+      font-size: 2.5em;
+    }
+
+    .attraction-content__inner {
+      gap: 1em;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .attraction-hero__title {
+      font-size: 2em;
+    }
+  }
+</style>
