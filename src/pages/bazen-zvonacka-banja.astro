@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Bazeni Zvonačka Banja — Olimpijski bazeni sa termomineralnom vodom 28°C"
+  title="Bazeni Zvonačka Banja | Olimpijski bazeni sa termomineralnom vodom 28°C"
   description="Dva zatvorena i jedan otvoreni olimpijski bazen sa mineralnom vodom temperature 28°C i protoka 9 l/s. Sportski tereni za košarku, fudbal, odbojku i tenis u srcu kanjona Jerme."
   schema={{
     "@context": "https://schema.org",
@@ -55,7 +55,7 @@ import Footer from "../components/Footer.astro";
         {
           "@type": "Question",
           "name": "Koliko bazena ima u Zvonačkoj Banji?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zvonačka Banja ima tri olimpijska bazena — dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom koja prirodno izvire na temperaturi od 28°C." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Zvonačka Banja ima tri olimpijska bazena: dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom koja prirodno izvire na temperaturi od 28°C." }
         },
         {
           "@type": "Question",
@@ -111,7 +111,7 @@ import Footer from "../components/Footer.astro";
       <div class="attraction-content__inner container">
         <div class="attraction-content__text" data-fade-up>
           <p>
-            Bazeni Zvonačke Banje čine tri olimpijska bazena — dva zatvorena i jedan otvoreni — punjeni termomineralnom vodom temperature 28°C sa protokom od 9 litara u sekundi. Voda je lekovita i koristi se kako za kupanje, tako i za piće. Kompleks se nalazi u kanjonu reke Jerme, u sklopu nekadašnjeg hotela 'Mir'.
+            Bazeni Zvonačke Banje čine tri olimpijska bazena: dva zatvorena i jedan otvoreni, punjeni termomineralnom vodom temperature 28°C sa protokom od 9 litara u sekundi. Voda je lekovita i koristi se kako za kupanje, tako i za piće. Kompleks se nalazi u kanjonu reke Jerme, u sklopu nekadašnjeg hotela 'Mir'.
           </p>
         </div>
         <div class="attraction-content__image" data-reveal>
@@ -155,7 +155,7 @@ import Footer from "../components/Footer.astro";
 
         <h2>Kako doći do bazena Zvonačke Banje?</h2>
         <p>
-          Bazeni se nalaze u kompleksu nekadašnjeg hotela 'Mir' u Zvonačkoj Banji, Pirotski okrug, jugoistočna Srbija. Do banje se dolazi regionalnim putevima iz pravca Pirota (udaljenost oko 30 km) ili Babušnice, dolinom reke Jerme. Sam put kroz kanjon je doživljaj za sebe — vožnja prolazi kroz spektakularne predele sa visokim stenovitim liticama. Tokom posete bazenima, ne propustite obilazak <a href="/manastir-poganovo/">manastira Poganovo</a> sa freskama iz XV veka i penjanje na <a href="/asenovo-kale/">Asenovo Kale</a> za panoramski pogled. Za kompletne informacije o svim atrakcijama pogledajte naš <a href="/vodic/">vodič za posetioce</a>.
+          Bazeni se nalaze u kompleksu nekadašnjeg hotela 'Mir' u Zvonačkoj Banji, Pirotski okrug, jugoistočna Srbija. Do banje se dolazi regionalnim putevima iz pravca Pirota (udaljenost oko 30 km) ili Babušnice, dolinom reke Jerme. Sam put kroz kanjon je doživljaj za sebe, vožnja prolazi kroz spektakularne predele sa visokim stenovitim liticama. Tokom posete bazenima, ne propustite obilazak <a href="/manastir-poganovo/">manastira Poganovo</a> sa freskama iz XV veka i penjanje na <a href="/asenovo-kale/">Asenovo Kale</a> za panoramski pogled. Za kompletne informacije o svim atrakcijama pogledajte naš <a href="/vodic/">vodič za posetioce</a>.
         </p>
       </div>
     </section>
@@ -170,7 +170,7 @@ import Footer from "../components/Footer.astro";
           </details>
           <details class="faq-item">
             <summary>Koliko bazena ima u Zvonačkoj Banji?</summary>
-            <p>Zvonačka Banja ima tri olimpijska bazena — dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom koja prirodno izvire na temperaturi od 28°C.</p>
+            <p>Zvonačka Banja ima tri olimpijska bazena: dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom koja prirodno izvire na temperaturi od 28°C.</p>
           </details>
           <details class="faq-item">
             <summary>Koje bolesti se leče u Zvonačkoj Banji?</summary>
@@ -273,16 +273,15 @@ import Footer from "../components/Footer.astro";
   }
 
   .attraction-content__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
   }
 
   .attraction-content__text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
+    max-width: 48em;
+    text-align: center;
   }
 
   .attraction-content__text p {
@@ -294,8 +293,10 @@ import Footer from "../components/Footer.astro";
 
   .attraction-content__image {
     position: relative;
+    width: 100%;
     border-radius: 0.75em;
     overflow: hidden;
+    aspect-ratio: 16/9;
   }
 
   .attraction-content__image img {
@@ -316,20 +317,6 @@ import Footer from "../components/Footer.astro";
     .attraction-hero__title {
       font-size: 3em;
     }
-
-    .attraction-content__inner {
-      grid-template-columns: 1fr;
-      gap: 1.25em;
-    }
-
-    .attraction-content__image {
-      height: 20em;
-    }
-
-    .attraction-content__image img {
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   @media (max-width: 767px) {
@@ -339,10 +326,6 @@ import Footer from "../components/Footer.astro";
 
     .attraction-hero__title {
       font-size: 2.5em;
-    }
-
-    .attraction-content__inner {
-      gap: 1em;
     }
   }
 
@@ -354,10 +337,11 @@ import Footer from "../components/Footer.astro";
 
   .attraction-details__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-details__inner h2 {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     color: var(--color-heading);
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -413,6 +397,7 @@ import Footer from "../components/Footer.astro";
 
   .attraction-faq__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-faq__inner > h2 {

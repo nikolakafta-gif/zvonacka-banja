@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Asenovo Kale — Greben na 1032 m sa gnezdima surih orlova | Zvonačka Banja"
+  title="Asenovo Kale | Greben na 1032 m sa gnezdima surih orlova | Zvonačka Banja"
   description="Asenovo Kale je jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. U blizini pećina Vetrena Dupka sa 4 km kanala. Panoramski pogled na Vlašku planinu."
   schema={{
     "@context": "https://schema.org",
@@ -55,7 +55,7 @@ import Footer from "../components/Footer.astro";
         {
           "@type": "Question",
           "name": "Zašto je Asenovo Kale jedinstveno u Srbiji?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi — retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi, retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje." }
         },
         {
           "@type": "Question",
@@ -125,12 +125,12 @@ import Footer from "../components/Footer.astro";
       <div class="attraction-details__inner container">
         <h2>Zašto je Asenovo Kale jedinstveno u Srbiji?</h2>
         <p>
-          Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi — retka i zaštićena vrsta ptica grabljivica sa rasponom krila do 2,5 metra. Nepristupačne litice grebena i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje ove impresivne ptice. Posmatranje surih orlova u njihovom prirodnom staništu je jedinstveno iskustvo za ljubitelje prirode i ornitologe.
+          Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi, retka i zaštićena vrsta ptica grabljivica sa rasponom krila do 2,5 metra. Nepristupačne litice grebena i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje ove impresivne ptice. Posmatranje surih orlova u njihovom prirodnom staništu je jedinstveno iskustvo za ljubitelje prirode i ornitologe.
         </p>
 
         <h2>Šta je pećina Vetrena Dupka?</h2>
         <p>
-          Vetrena Dupka je pećina u blizini Asenovog Kaleta sa podzemnim kanalima dužine 4 km. Pećina privlači speleologe i ljubitelje prirode impresivnim podzemnim formacijama — stalaktitima, stalagmitima i podzemnim dvoranama. Predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji. Za ulazak u pećinu preporučuje se odgovarajuća oprema i iskustvo u speleologiji.
+          Vetrena Dupka je pećina u blizini Asenovog Kaleta sa podzemnim kanalima dužine 4 km. Pećina privlači speleologe i ljubitelje prirode impresivnim podzemnim formacijama: stalaktitima, stalagmitima i podzemnim dvoranama. Predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji. Za ulazak u pećinu preporučuje se odgovarajuća oprema i iskustvo u speleologiji.
         </p>
 
         <h2>Kakav pogled se pruža sa grebena?</h2>
@@ -160,7 +160,7 @@ import Footer from "../components/Footer.astro";
           </details>
           <details class="faq-item">
             <summary>Zašto je Asenovo Kale jedinstveno u Srbiji?</summary>
-            <p>Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi — retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje.</p>
+            <p>Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi, retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje.</p>
           </details>
           <details class="faq-item">
             <summary>Šta je pećina Vetrena Dupka?</summary>
@@ -263,16 +263,15 @@ import Footer from "../components/Footer.astro";
   }
 
   .attraction-content__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
   }
 
   .attraction-content__text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
+    max-width: 48em;
+    text-align: center;
   }
 
   .attraction-content__text p {
@@ -284,8 +283,10 @@ import Footer from "../components/Footer.astro";
 
   .attraction-content__image {
     position: relative;
+    width: 100%;
     border-radius: 0.75em;
     overflow: hidden;
+    aspect-ratio: 16/9;
   }
 
   .attraction-content__image img {
@@ -306,20 +307,6 @@ import Footer from "../components/Footer.astro";
     .attraction-hero__title {
       font-size: 3em;
     }
-
-    .attraction-content__inner {
-      grid-template-columns: 1fr;
-      gap: 1.25em;
-    }
-
-    .attraction-content__image {
-      height: 20em;
-    }
-
-    .attraction-content__image img {
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   @media (max-width: 767px) {
@@ -329,10 +316,6 @@ import Footer from "../components/Footer.astro";
 
     .attraction-hero__title {
       font-size: 2.5em;
-    }
-
-    .attraction-content__inner {
-      gap: 1em;
     }
   }
 
@@ -344,10 +327,11 @@ import Footer from "../components/Footer.astro";
 
   .attraction-details__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-details__inner h2 {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     color: var(--color-heading);
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -380,6 +364,7 @@ import Footer from "../components/Footer.astro";
 
   .attraction-faq__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-faq__inner > h2 {

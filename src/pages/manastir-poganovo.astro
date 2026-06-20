@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Manastir Poganovo — Srednjovekovni manastir iz 14. veka | Zvonačka Banja"
+  title="Manastir Poganovo | Srednjovekovni manastir iz 14. veka | Zvonačka Banja"
   description="Manastir Poganovo je posvećen Svetom Jovanu Bogoslovu i poznat po izuzetnim freskama. Smešten u kanjonu reke Jerme, okružen liticama i netaknutom prirodom. U blizini manastiri Sukovo i Temska."
   schema={{
     "@context": "https://schema.org",
@@ -124,12 +124,12 @@ import Footer from "../components/Footer.astro";
 
         <h2>Čime su posebne freske manastira Poganovo?</h2>
         <p>
-          Manastir Poganovo je poznat po izuzetnim freskama iz 14. i 15. veka koje svedoče o bogatoj umetničkoj tradiciji srednjovekovne Srbije. Posebno se ističe freska Svetog Jovana Bogoslova, zaštitnika manastira. Freske su rađene u stilu moravske škole i predstavljaju vredne primere srpskog srednjovekovnog slikarstva. Crkva je posvećena Svetom Jovanu Bogoslovu — jedinom apostolu koji je umro prirodnom smrću.
+          Manastir Poganovo je poznat po izuzetnim freskama iz 14. i 15. veka koje svedoče o bogatoj umetničkoj tradiciji srednjovekovne Srbije. Posebno se ističe freska Svetog Jovana Bogoslova, zaštitnika manastira. Freske su rađene u stilu moravske škole i predstavljaju vredne primere srpskog srednjovekovnog slikarstva. Crkva je posvećena Svetom Jovanu Bogoslovu, jedinom apostolu koji je umro prirodnom smrću.
         </p>
 
         <h2>Kako doći do manastira Poganovo?</h2>
         <p>
-          Do manastira se dolazi regionalnim putem iz pravca Pirota (udaljenost oko 30 km) ili iz pravca Babušnice, dolinom reke Jerme. Put prolazi kroz spektakularan kanjon sa visokim stenovitim liticama — sam put je doživljaj za sebe. Ispred manastira se nalazi parking za posetioce, ali je prostor ograničen, pa se tokom praznika preporučuje raniji dolazak.
+          Do manastira se dolazi regionalnim putem iz pravca Pirota (udaljenost oko 30 km) ili iz pravca Babušnice, dolinom reke Jerme. Put prolazi kroz spektakularan kanjon sa visokim stenovitim liticama. Ispred manastira se nalazi parking za posetioce, ali je prostor ograničen, pa se tokom praznika preporučuje raniji dolazak.
         </p>
 
         <h2>Koji još manastiri postoje u okolini?</h2>
@@ -257,16 +257,15 @@ import Footer from "../components/Footer.astro";
   }
 
   .attraction-content__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
   }
 
   .attraction-content__text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
+    max-width: 48em;
+    text-align: center;
   }
 
   .attraction-content__text p {
@@ -278,8 +277,10 @@ import Footer from "../components/Footer.astro";
 
   .attraction-content__image {
     position: relative;
+    width: 100%;
     border-radius: 0.75em;
     overflow: hidden;
+    aspect-ratio: 16/9;
   }
 
   .attraction-content__image img {
@@ -300,20 +301,6 @@ import Footer from "../components/Footer.astro";
     .attraction-hero__title {
       font-size: 3em;
     }
-
-    .attraction-content__inner {
-      grid-template-columns: 1fr;
-      gap: 1.25em;
-    }
-
-    .attraction-content__image {
-      height: 20em;
-    }
-
-    .attraction-content__image img {
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   @media (max-width: 767px) {
@@ -323,10 +310,6 @@ import Footer from "../components/Footer.astro";
 
     .attraction-hero__title {
       font-size: 2.5em;
-    }
-
-    .attraction-content__inner {
-      gap: 1em;
     }
   }
 
@@ -338,10 +321,11 @@ import Footer from "../components/Footer.astro";
 
   .attraction-details__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-details__inner h2 {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     color: var(--color-heading);
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -374,6 +358,7 @@ import Footer from "../components/Footer.astro";
 
   .attraction-faq__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-faq__inner > h2 {

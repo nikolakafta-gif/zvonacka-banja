@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Kanjon reke Jerme — Prirodni dragulj kod Zvonačke Banje"
+  title="Kanjon reke Jerme | Prirodni dragulj kod Zvonačke Banje"
   description="Živopisna klisura reke Jerme sa stenovitim liticama i bistrom vodom. Idealna za pešačenje, fotografiju i izlete u netaknutoj prirodi jugoistočne Srbije."
   schema={{
     "@context": "https://schema.org",
@@ -124,7 +124,7 @@ import Footer from "../components/Footer.astro";
 
         <h2>Koje aktivnosti su moguće u kanjonu?</h2>
         <p>
-          Kanjon nudi raznovrsne aktivnosti za ljubitelje prirode. Staze za pešačenje uz reku vode kroz spektakularne predele — od laganih šetnji pogodnih za porodice do zahtevnijih planinarskih ruta. Kanjon je idealan za fotografiju prirode, posmatranje ptica (uključujući surog orla), i ribolov. U blizini su i staze za planinarenje po Vlaškoj i Staroj planini.
+          Kanjon nudi raznovrsne aktivnosti za ljubitelje prirode. Staze za pešačenje uz reku vode kroz spektakularne predele, od laganih šetnji pogodnih za porodice do zahtevnijih planinarskih ruta. Kanjon je idealan za fotografiju prirode, posmatranje ptica (uključujući surog orla), i ribolov. U blizini su i staze za planinarenje po Vlaškoj i Staroj planini.
         </p>
 
         <h2>Kako doći do kanjona reke Jerme?</h2>
@@ -257,16 +257,15 @@ import Footer from "../components/Footer.astro";
   }
 
   .attraction-content__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
   }
 
   .attraction-content__text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
+    max-width: 48em;
+    text-align: center;
   }
 
   .attraction-content__text p {
@@ -278,8 +277,10 @@ import Footer from "../components/Footer.astro";
 
   .attraction-content__image {
     position: relative;
+    width: 100%;
     border-radius: 0.75em;
     overflow: hidden;
+    aspect-ratio: 16/9;
   }
 
   .attraction-content__image img {
@@ -300,20 +301,6 @@ import Footer from "../components/Footer.astro";
     .attraction-hero__title {
       font-size: 3em;
     }
-
-    .attraction-content__inner {
-      grid-template-columns: 1fr;
-      gap: 1.25em;
-    }
-
-    .attraction-content__image {
-      height: 20em;
-    }
-
-    .attraction-content__image img {
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   @media (max-width: 767px) {
@@ -323,10 +310,6 @@ import Footer from "../components/Footer.astro";
 
     .attraction-hero__title {
       font-size: 2.5em;
-    }
-
-    .attraction-content__inner {
-      gap: 1em;
     }
   }
 
@@ -338,10 +321,11 @@ import Footer from "../components/Footer.astro";
 
   .attraction-details__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-details__inner h2 {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     color: var(--color-heading);
     margin-top: 2.5em;
     margin-bottom: 1em;
@@ -374,6 +358,7 @@ import Footer from "../components/Footer.astro";
 
   .attraction-faq__inner {
     max-width: 48em;
+    margin-inline: auto;
   }
 
   .attraction-faq__inner > h2 {
