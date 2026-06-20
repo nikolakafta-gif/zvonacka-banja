@@ -10,7 +10,15 @@ import Cta from "../components/Cta.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+  extraSchemas={[{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" }
+    ]
+  }]}
+>
   <Navbar />
   <main id="main-content">
     <Hero />

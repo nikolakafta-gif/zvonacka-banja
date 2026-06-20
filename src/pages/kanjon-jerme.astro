@@ -7,6 +7,34 @@ import Footer from "../components/Footer.astro";
 <BaseLayout
   title="Kanjon reke Jerme | Zvonačka Banja"
   description="Živopisna klisura reke Jerme u neposrednoj blizini Zvonačke Banje. Netaknuta priroda idealna za šetnje, izlete i fotografiju."
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Kanjon reke Jerme",
+    "description": "Živopisna klisura reke Jerme u neposrednoj blizini Zvonačke Banje. Netaknuta priroda idealna za šetnje, izlete i fotografiju.",
+    "url": "https://www.zvonackabanja.net/kanjon-jerme/",
+    "image": "https://www.zvonackabanja.net/assets/images/card-kanjon-jerme.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Zvonačka Banja",
+      "addressRegion": "Pirotski okrug",
+      "addressCountry": "RS"
+    },
+    "isPartOf": {
+      "@type": "TouristAttraction",
+      "name": "Zvonačka Banja",
+      "url": "https://www.zvonackabanja.net/"
+    }
+  }}
+  extraSchemas={[{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
+      { "@type": "ListItem", "position": 3, "name": "Kanjon reke Jerme", "item": "https://www.zvonackabanja.net/kanjon-jerme/" }
+    ]
+  }]}
 >
   <Navbar />
   <main id="main-content">

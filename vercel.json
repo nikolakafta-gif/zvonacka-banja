@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "zvonackabanja.net" }],
+      "destination": "https://www.zvonackabanja.net/:path",
+      "permanent": true
+    }
+  ]
+}

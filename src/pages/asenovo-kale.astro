@@ -7,6 +7,40 @@ import Footer from "../components/Footer.astro";
 <BaseLayout
   title="Asenovo Kale | Zvonačka Banja"
   description="Greben Asenovo Kale na 1032 m nadmorske visine, jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. U blizini je pećina Vetrena Dupka."
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Asenovo Kale",
+    "description": "Greben na nadmorskoj visini od 1032 m, jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. U blizini je pećina Vetrena Dupka sa kanalima dužine 4 km.",
+    "url": "https://www.zvonackabanja.net/asenovo-kale/",
+    "image": "https://www.zvonackabanja.net/assets/images/card-asenovo-kale.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Zvonačka Banja",
+      "addressRegion": "Pirotski okrug",
+      "addressCountry": "RS"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.1,
+      "longitude": 22.6,
+      "elevation": "1032"
+    },
+    "isPartOf": {
+      "@type": "TouristAttraction",
+      "name": "Zvonačka Banja",
+      "url": "https://www.zvonackabanja.net/"
+    }
+  }}
+  extraSchemas={[{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Početna", "item": "https://www.zvonackabanja.net/" },
+      { "@type": "ListItem", "position": 2, "name": "Šta Posetiti", "item": "https://www.zvonackabanja.net/#services" },
+      { "@type": "ListItem", "position": 3, "name": "Asenovo Kale", "item": "https://www.zvonackabanja.net/asenovo-kale/" }
+    ]
+  }]}
 >
   <Navbar />
   <main id="main-content">
