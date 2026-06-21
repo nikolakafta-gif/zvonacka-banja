@@ -106,21 +106,22 @@ import Footer from "../components/Footer.astro";
         <div class="guide-hero__overlay"></div>
       </div>
       <div class="guide-hero__inner container">
-        <a href="/" class="guide-hero__back">
+        <a href="/#services" class="guide-hero__back">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
-          Početna
+          Nazad
         </a>
         <span class="eyebrow">Kompletni Vodič</span>
         <h1 class="guide-hero__title">Zvonačka<br><span class="guide-hero__accent">Banja</span></h1>
-        <p class="guide-hero__subtitle">Sve što treba da znate pre posete</p>
       </div>
     </section>
 
     <section class="guide-intro">
       <div class="guide-intro__inner container">
-        <p class="guide-intro__lead">
-          Zvonačka Banja je vazdušna banja u jugoistočnoj Srbiji, smeštena u kanjonu reke Jerme na nadmorskoj visini od 430 metara, poznata po termomineralnoj vodi temperature 28°C koja leči bolesti lokomotornog aparata, reumatizam i nervne bolesti. Ovaj vodič pokriva sve što treba da znate pre posete: od bazena i terapija, preko atrakcija u okolini, do smeštaja i praktičnih saveta za putovanje.
-        </p>
+        <div class="guide-intro__text" data-fade-up>
+          <p>
+            Zvonačka Banja je vazdušna banja u jugoistočnoj Srbiji, smeštena u kanjonu reke Jerme na nadmorskoj visini od 430 metara, poznata po termomineralnoj vodi temperature 28°C koja leči bolesti lokomotornog aparata, reumatizam i nervne bolesti. Ovaj vodič pokriva sve što treba da znate pre posete: od bazena i terapija, preko atrakcija u okolini, do smeštaja i praktičnih saveta za putovanje.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -299,15 +300,17 @@ import Footer from "../components/Footer.astro";
   .guide-hero {
     position: relative;
     width: 100%;
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
     align-items: flex-end;
+    padding-top: 5em;
     overflow: hidden;
   }
 
   .guide-hero__bg {
     position: absolute;
     inset: 0;
+    background-color: #2a3a2d;
     background-image: url("/assets/images/hero-services.jpg");
     background-size: cover;
     background-position: center;
@@ -316,61 +319,42 @@ import Footer from "../components/Footer.astro";
   .guide-hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(14, 26, 16, 0.95) 0%, rgba(14, 26, 16, 0.4) 100%);
+    background: linear-gradient(to bottom, rgba(31,44,34,0.3) 0%, rgba(31,44,34,0.8) 100%);
   }
 
   .guide-hero__inner {
     position: relative;
     z-index: 1;
-    padding-block: 8em 4em;
-    padding-inline: var(--container-padding);
-    max-width: var(--size-container);
-    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25em;
+    padding-block: 4em;
   }
 
   .guide-hero__back {
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
+    font-size: var(--text-small);
+    font-weight: 500;
     color: var(--color-text-light);
-    text-decoration: none;
-    font-size: var(--text-body-sm, 0.875em);
-    margin-bottom: 1.5em;
-    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-ui);
+    transition: color var(--transition-base);
   }
 
   .guide-hero__back:hover {
-    color: var(--color-accent);
-  }
-
-  .eyebrow {
-    display: block;
-    font-size: var(--text-body-sm, 0.875em);
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 1.68px;
-    margin-bottom: 0.75em;
-    font-weight: 500;
+    color: var(--color-heading);
   }
 
   .guide-hero__title {
-    font-family: var(--font-heading);
-    font-size: var(--text-h1, 4.25em);
-    font-weight: 400;
-    color: var(--color-heading);
-    line-height: 1.05;
-    letter-spacing: -1.92px;
+    font-size: var(--text-h1);
+    line-height: 1.0;
   }
 
   .guide-hero__accent {
-    color: var(--color-accent);
-  }
-
-  .guide-hero__subtitle {
-    font-size: var(--text-body, 1em);
-    color: var(--color-text-light);
-    margin-top: 1em;
-    font-weight: 300;
+    font-style: italic;
   }
 
   .guide-intro {
@@ -380,19 +364,22 @@ import Footer from "../components/Footer.astro";
   }
 
   .guide-intro__inner {
-    max-width: var(--size-container);
-    margin-inline: auto;
-    padding-inline: var(--container-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
   }
 
-  .guide-intro__lead {
+  .guide-intro__text {
     max-width: 48em;
+    text-align: center;
+  }
+
+  .guide-intro__text p {
     font-size: 1.125em;
     color: var(--color-text-light);
     line-height: 1.8;
     font-weight: 300;
-    border-left: 3px solid var(--color-accent);
-    padding-left: 1.5em;
   }
 
   .guide-content {
@@ -402,18 +389,16 @@ import Footer from "../components/Footer.astro";
   }
 
   .guide-content__inner {
-    max-width: var(--size-container);
+    max-width: 48em;
     margin-inline: auto;
-    padding-inline: var(--container-padding);
   }
 
   .guide-content__inner h2 {
-    max-width: 48em;
     font-size: var(--text-h2);
     color: var(--color-heading);
     margin-top: 2.5em;
     margin-bottom: 1em;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.3;
   }
 
@@ -422,22 +407,20 @@ import Footer from "../components/Footer.astro";
   }
 
   .guide-content__inner p {
-    max-width: 48em;
-    font-size: var(--text-body);
+    font-size: 1.125em;
     color: var(--color-text-light);
     line-height: 1.8;
     font-weight: 300;
   }
 
   .guide-content__inner ul {
-    max-width: 48em;
     list-style: none;
     padding-left: 1.5em;
     margin-block: 0.5em 1em;
   }
 
   .guide-content__inner li {
-    font-size: var(--text-body);
+    font-size: 1.125em;
     color: var(--color-text-light);
     line-height: 1.8;
     font-weight: 300;
@@ -469,22 +452,22 @@ import Footer from "../components/Footer.astro";
   }
 
   .guide-faq__inner {
-    max-width: var(--size-container);
+    max-width: 48em;
     margin-inline: auto;
-    padding-inline: var(--container-padding);
   }
 
   .guide-faq__inner > h2 {
-    max-width: 48em;
     font-size: var(--text-h2);
     color: var(--color-heading);
     margin-bottom: 2em;
     font-weight: 500;
     line-height: 1.3;
+    text-align: center;
   }
 
   .faq-list {
-    max-width: 48em;
+    display: flex;
+    flex-direction: column;
   }
 
   .faq-item {
@@ -496,7 +479,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .faq-item summary {
-    font-size: var(--text-body);
+    font-size: 1.125em;
     color: var(--color-heading);
     font-weight: 500;
     padding: 1.25em 0;
@@ -528,7 +511,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .faq-item p {
-    font-size: var(--text-body);
+    font-size: 1.125em;
     color: var(--color-text-light);
     line-height: 1.8;
     font-weight: 300;
@@ -536,32 +519,43 @@ import Footer from "../components/Footer.astro";
   }
 
   @media (max-width: 991px) {
-    .guide-hero {
-      min-height: 50vh;
-    }
     .guide-hero__title {
       font-size: 3em;
+    }
+
+    .guide-content__inner h2,
+    .guide-faq__inner > h2 {
+      font-size: 2em;
     }
   }
 
   @media (max-width: 767px) {
     .guide-hero {
-      min-height: 45vh;
+      min-height: 60vh;
     }
-    .guide-hero__inner {
-      padding-block: 6em 3em;
-    }
+
     .guide-hero__title {
       font-size: 2.5em;
     }
+
     .guide-content__inner h2 {
       margin-top: 2em;
+    }
+
+    .guide-content__inner h2,
+    .guide-faq__inner > h2 {
+      font-size: 1.75em;
     }
   }
 
   @media (max-width: 479px) {
     .guide-hero__title {
       font-size: 2em;
+    }
+
+    .guide-content__inner h2,
+    .guide-faq__inner > h2 {
+      font-size: 1.5em;
     }
   }
 </style>
