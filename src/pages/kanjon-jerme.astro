@@ -150,35 +150,51 @@ import Footer from "../components/Footer.astro";
         <div class="faq-list">
           <details class="faq-item">
             <summary>Gde se nalazi kanjon reke Jerme?</summary>
-            <p>Kanjon reke Jerme se nalazi u jugoistočnoj Srbiji, u Pirotskom okrugu, u neposrednoj blizini Zvonačke Banje. Proteže se duž toka reke Jerme koja izvire u Bugarskoj i uliva se u Nišavu.</p>
+            <div class="faq-item__answer">
+              <p>Kanjon reke Jerme se nalazi u jugoistočnoj Srbiji, u Pirotskom okrugu, u neposrednoj blizini Zvonačke Banje. Proteže se duž toka reke Jerme koja izvire u Bugarskoj i uliva se u Nišavu.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Kako doći do kanjona reke Jerme?</summary>
-            <p>Do kanjona se dolazi regionalnim putevima iz pravca Pirota (oko 30 km) ili Babušnice. Put prolazi direktno kroz kanjon, pružajući spektakularne poglede na stenovite litice i bistru reku.</p>
+            <div class="faq-item__answer">
+              <p>Do kanjona se dolazi regionalnim putevima iz pravca Pirota (oko 30 km) ili Babušnice. Put prolazi direktno kroz kanjon, pružajući spektakularne poglede na stenovite litice i bistru reku.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Koje aktivnosti su moguće u kanjonu Jerme?</summary>
-            <p>Kanjon nudi pešačenje i planinarenje stazama uz reku, fotografiju prirode, ribolov, posmatranje ptica (uključujući suri orao), i posete obližnjim manastirima. U blizini su i bazeni sa termomineralnom vodom.</p>
+            <div class="faq-item__answer">
+              <p>Kanjon nudi pešačenje i planinarenje stazama uz reku, fotografiju prirode, ribolov, posmatranje ptica (uključujući suri orao), i posete obližnjim manastirima. U blizini su i bazeni sa termomineralnom vodom.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Da li je kanjon Jerme pogodan za jednodnevni izlet?</summary>
-            <p>Da, kanjon je idealan za jednodnevni izlet iz Pirota ili Niša. Kombinujte posetu kanjonu sa kupanjem u bazenima Zvonačke Banje, obilaskom manastira Poganovo i penjanjem na Asenovo Kale.</p>
+            <div class="faq-item__answer">
+              <p>Da, kanjon je idealan za jednodnevni izlet iz Pirota ili Niša. Kombinujte posetu kanjonu sa kupanjem u bazenima Zvonačke Banje, obilaskom manastira Poganovo i penjanjem na Asenovo Kale.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Koliko je dugačak kanjon reke Jerme?</summary>
-            <p>Kanjon reke Jerme se proteže na dužini od oko 20 km kroz jugoistočnu Srbiju. Najimpresivniji deo kanjona sa visokim stenovitim liticama nalazi se u blizini Zvonačke Banje i manastira Poganovo.</p>
+            <div class="faq-item__answer">
+              <p>Kanjon reke Jerme se proteže na dužini od oko 20 km kroz jugoistočnu Srbiju. Najimpresivniji deo kanjona sa visokim stenovitim liticama nalazi se u blizini Zvonačke Banje i manastira Poganovo.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Šta mogu videti u kanjonu Jerme?</summary>
-            <p>U kanjonu možete videti visoke stenovite litice, bistru reku sa malim slapovima, bogatu vegetaciju, razne vrste ptica uključujući surog orla, i jedinstven pogled na netaknutu prirodu jugoistočne Srbije.</p>
+            <div class="faq-item__answer">
+              <p>U kanjonu možete videti visoke stenovite litice, bistru reku sa malim slapovima, bogatu vegetaciju, razne vrste ptica uključujući surog orla, i jedinstven pogled na netaknutu prirodu jugoistočne Srbije.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Da li postoje staze za pešačenje uz kanjon?</summary>
-            <p>Da, uz kanjon reke Jerme postoje staze za pešačenje različitih težina. Staze vode kroz spektakularne predele i pružaju nezaboravne poglede na vertikalne litice i gustu vegetaciju. Postoje i staze zdravlja u sklopu Zvonačke Banje.</p>
+            <div class="faq-item__answer">
+              <p>Da, uz kanjon reke Jerme postoje staze za pešačenje različitih težina. Staze vode kroz spektakularne predele i pružaju nezaboravne poglede na vertikalne litice i gustu vegetaciju. Postoje i staze zdravlja u sklopu Zvonačke Banje.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Koje znamenitosti su u blizini kanjona?</summary>
-            <p>U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), manastir Poganovo iz 14. veka, greben Asenovo Kale (1032 m) sa gnezdima surih orlova, i pećina Vetrena Dupka sa 4 km kanala.</p>
+            <div class="faq-item__answer">
+              <p>U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), manastir Poganovo iz 14. veka, greben Asenovo Kale (1032 m) sa gnezdima surih orlova, i pećina Vetrena Dupka sa 4 km kanala.</p>
+            </div>
           </details>
         </div>
       </div>
@@ -278,6 +294,8 @@ import Footer from "../components/Footer.astro";
   .attraction-content__image {
     position: relative;
     width: 100%;
+    max-width: 52em;
+    margin-inline: auto;
     border-radius: 0.75em;
     overflow: hidden;
     aspect-ratio: 16/9;
@@ -362,10 +380,10 @@ import Footer from "../components/Footer.astro";
   }
 
   .attraction-faq__inner > h2 {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     color: var(--color-heading);
     margin-bottom: 2em;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.3;
   }
 
@@ -401,13 +419,17 @@ import Footer from "../components/Footer.astro";
 
   .faq-item summary::after {
     content: "+";
-    font-size: 1.25em;
+    font-size: 1.75em;
     color: var(--color-accent);
     flex-shrink: 0;
   }
 
   .faq-item[open] summary::after {
     content: "−";
+  }
+
+  .faq-item__answer {
+    overflow: hidden;
   }
 
   .faq-item p {

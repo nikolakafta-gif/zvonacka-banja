@@ -131,10 +131,69 @@ function initSelectorPanels() {
   );
 }
 
+/* ── FAQ Accordion ── */
+function initFaqAccordion() {
+  document.querySelectorAll<HTMLDetailsElement>(".faq-item").forEach((details) => {
+    if (details.dataset.faqInit) return;
+    details.dataset.faqInit = "1";
+
+    const summary = details.querySelector("summary");
+    const answer = details.querySelector<HTMLElement>(".faq-item__answer");
+    if (!summary || !answer) return;
+
+    const wasOpen = details.open;
+    details.open = true;
+    answer.style.overflow = "hidden";
+    if (!wasOpen) {
+      answer.style.height = "0px";
+      details.open = false;
+    }
+
+    let animating = false;
+    let isOpen = wasOpen;
+
+    summary.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (animating) return;
+
+      details.open = true;
+
+      if (isOpen) {
+        animating = true;
+        isOpen = false;
+        gsap.to(answer, {
+          height: 0,
+          duration: 0.35,
+          ease: "power2.inOut",
+          onComplete() {
+            details.open = false;
+            animating = false;
+          },
+        });
+      } else {
+        isOpen = true;
+        animating = true;
+        const h = answer.scrollHeight;
+        gsap.fromTo(answer, { height: 0 }, {
+          height: h,
+          duration: 0.4,
+          ease: "power2.out",
+          onComplete() {
+            answer.style.height = "";
+            animating = false;
+          },
+        });
+      }
+    });
+  });
+}
+
 /* ── Init all ── */
 export function initScrollAnimations() {
   if (document.documentElement.dataset.gsapInit) return;
   document.documentElement.dataset.gsapInit = "1";
+
+  initFaqAccordion();
 
   const mm = gsap.matchMedia();
   mm.add("(prefers-reduced-motion: no-preference)", () => {

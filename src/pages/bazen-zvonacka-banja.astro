@@ -166,35 +166,51 @@ import Footer from "../components/Footer.astro";
         <div class="faq-list">
           <details class="faq-item">
             <summary>Koja je temperatura vode u bazenima Zvonačke Banje?</summary>
-            <p>Termomineralna voda u bazenima Zvonačke Banje ima prirodnu temperaturu od 28°C tokom cele godine. Voda izvire sa protoka od 9 litara u sekundi i koristi se kako za kupanje tako i za piće.</p>
+            <div class="faq-item__answer">
+              <p>Termomineralna voda u bazenima Zvonačke Banje ima prirodnu temperaturu od 28°C tokom cele godine. Voda izvire sa protoka od 9 litara u sekundi i koristi se kako za kupanje tako i za piće.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Koliko bazena ima u Zvonačkoj Banji?</summary>
-            <p>Zvonačka Banja ima tri olimpijska bazena: dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom koja prirodno izvire na temperaturi od 28°C.</p>
+            <div class="faq-item__answer">
+              <p>Zvonačka Banja ima tri olimpijska bazena: dva zatvorena i jedan otvoreni. Svi bazeni su punjeni termomineralnom vodom koja prirodno izvire na temperaturi od 28°C.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Koje bolesti se leče u Zvonačkoj Banji?</summary>
-            <p>U Zvonačkoj Banji se leče bolesti lokomotornog aparata, nervne bolesti, reumatizam, povišeni krvni pritisak, poremećaji periferne cirkulacije, klimakterične tegobe, menadžerske bolesti i upalne promene na očima.</p>
+            <div class="faq-item__answer">
+              <p>U Zvonačkoj Banji se leče bolesti lokomotornog aparata, nervne bolesti, reumatizam, povišeni krvni pritisak, poremećaji periferne cirkulacije, klimakterične tegobe, menadžerske bolesti i upalne promene na očima.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Koje terapije se primenjuju u Zvonačkoj Banji?</summary>
-            <p>U banjskom kompleksu primenjuju se hidroterapija, elektroterapija, kineziterapija, parafinoterapija i laseroterapija. Postoje i staze zdravlja za pešačenje u prirodi kao deo terapijskog programa.</p>
+            <div class="faq-item__answer">
+              <p>U banjskom kompleksu primenjuju se hidroterapija, elektroterapija, kineziterapija, parafinoterapija i laseroterapija. Postoje i staze zdravlja za pešačenje u prirodi kao deo terapijskog programa.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Koji sportski tereni postoje u Zvonačkoj Banji?</summary>
-            <p>Pored bazena, kompleks nudi terene za košarku, mali fudbal, odbojku i tenis. Sve sportske sadržaje okružuje netaknuta priroda kanjona reke Jerme.</p>
+            <div class="faq-item__answer">
+              <p>Pored bazena, kompleks nudi terene za košarku, mali fudbal, odbojku i tenis. Sve sportske sadržaje okružuje netaknuta priroda kanjona reke Jerme.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Da li je voda u bazenima lekovita?</summary>
-            <p>Da, voda u bazenima Zvonačke Banje je termomineralna i ima lekovita svojstva. Koristi se za lečenje reumatizma, bolesti lokomotornog aparata i nervnih bolesti. Voda je pogodna i za piće.</p>
+            <div class="faq-item__answer">
+              <p>Da, voda u bazenima Zvonačke Banje je termomineralna i ima lekovita svojstva. Koristi se za lečenje reumatizma, bolesti lokomotornog aparata i nervnih bolesti. Voda je pogodna i za piće.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Gde se nalaze bazeni Zvonačke Banje?</summary>
-            <p>Bazeni su smešteni u kompleksu nekadašnjeg hotela 'Mir' u Zvonačkoj Banji, u kanjonu reke Jerme, u jugoistočnoj Srbiji, Pirotski okrug. Do banje se dolazi regionalnim putem iz pravca Pirota ili Babušnice.</p>
+            <div class="faq-item__answer">
+              <p>Bazeni su smešteni u kompleksu nekadašnjeg hotela 'Mir' u Zvonačkoj Banji, u kanjonu reke Jerme, u jugoistočnoj Srbiji, Pirotski okrug. Do banje se dolazi regionalnim putem iz pravca Pirota ili Babušnice.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Da li bazen radi tokom cele godine?</summary>
-            <p>Zatvoreni bazeni su dostupni tokom cele godine zahvaljujući konstantnoj temperaturi termomineralne vode od 28°C. Otvoreni bazen je dostupan u letnjoj sezoni.</p>
+            <div class="faq-item__answer">
+              <p>Zatvoreni bazeni su dostupni tokom cele godine zahvaljujući konstantnoj temperaturi termomineralne vode od 28°C. Otvoreni bazen je dostupan u letnjoj sezoni.</p>
+            </div>
           </details>
         </div>
       </div>
@@ -294,6 +310,8 @@ import Footer from "../components/Footer.astro";
   .attraction-content__image {
     position: relative;
     width: 100%;
+    max-width: 52em;
+    margin-inline: auto;
     border-radius: 0.75em;
     overflow: hidden;
     aspect-ratio: 16/9;
@@ -401,10 +419,10 @@ import Footer from "../components/Footer.astro";
   }
 
   .attraction-faq__inner > h2 {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     color: var(--color-heading);
     margin-bottom: 2em;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.3;
   }
 
@@ -441,7 +459,7 @@ import Footer from "../components/Footer.astro";
 
   .faq-item summary::after {
     content: "+";
-    font-size: 1.25em;
+    font-size: 1.75em;
     color: var(--color-accent);
     flex-shrink: 0;
     transition: transform 0.2s ease;
@@ -449,6 +467,10 @@ import Footer from "../components/Footer.astro";
 
   .faq-item[open] summary::after {
     content: "−";
+  }
+
+  .faq-item__answer {
+    overflow: hidden;
   }
 
   .faq-item p {

@@ -156,35 +156,51 @@ import Footer from "../components/Footer.astro";
         <div class="faq-list">
           <details class="faq-item">
             <summary>Šta je Asenovo Kale?</summary>
-            <p>Asenovo Kale je greben na nadmorskoj visini od 1032 m u blizini Zvonačke Banje. To je jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. Na grebenu se nalaze i ostaci srednjovekovne tvrđave.</p>
+            <div class="faq-item__answer">
+              <p>Asenovo Kale je greben na nadmorskoj visini od 1032 m u blizini Zvonačke Banje. To je jedino mesto u Srbiji gde se mogu videti gnezda surih orlova. Na grebenu se nalaze i ostaci srednjovekovne tvrđave.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Zašto je Asenovo Kale jedinstveno u Srbiji?</summary>
-            <p>Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi, retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje.</p>
+            <div class="faq-item__answer">
+              <p>Asenovo Kale je jedino mesto u Srbiji gde gnezde suri orlovi, retka i zaštićena vrsta ptica grabljivica. Nepristupačne litice i mirno okruženje daleko od ljudskih naselja pružaju idealne uslove za gnežđenje.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Šta je pećina Vetrena Dupka?</summary>
-            <p>Vetrena Dupka je pećina u blizini Asenovog Kaleta sa podzemnim kanalima dužine 4 km. Privlači speleologe i ljubitelje prirode impresivnim podzemnim formacijama i predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji.</p>
+            <div class="faq-item__answer">
+              <p>Vetrena Dupka je pećina u blizini Asenovog Kaleta sa podzemnim kanalima dužine 4 km. Privlači speleologe i ljubitelje prirode impresivnim podzemnim formacijama i predstavlja jednu od najzanimljivijih speleoloških lokacija u jugoistočnoj Srbiji.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Kako doći do Asenovog Kaleta?</summary>
-            <p>Do Asenovog Kaleta se dolazi iz Zvonačke Banje planinarskim stazama. Polazna tačka je banjski kompleks, odakle staza vodi kroz šumu do grebena. Preporučuje se planinarsko iskustvo i odgovarajuća oprema.</p>
+            <div class="faq-item__answer">
+              <p>Do Asenovog Kaleta se dolazi iz Zvonačke Banje planinarskim stazama. Polazna tačka je banjski kompleks, odakle staza vodi kroz šumu do grebena. Preporučuje se planinarsko iskustvo i odgovarajuća oprema.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Kakav pogled se pruža sa Asenovog Kaleta?</summary>
-            <p>Sa grebena se pruža spektakularan panoramski pogled na okolne planine, dolinu reke Jerme i prostranstva Vlaške planine. Po vedrom vremenu, vidik seže do udaljenih vrhova Stare planine.</p>
+            <div class="faq-item__answer">
+              <p>Sa grebena se pruža spektakularan panoramski pogled na okolne planine, dolinu reke Jerme i prostranstva Vlaške planine. Po vedrom vremenu, vidik seže do udaljenih vrhova Stare planine.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Da li postoje ostaci tvrđave na Asenovom Kaletu?</summary>
-            <p>Da, Asenovo Kale je lokalitet sa ostacima srednjovekovne tvrđave, što mu daje dodatnu kulturno-istorijsku vrednost. Tvrđava je služila kao odbrambeno utvrđenje koje je koristilo prirodnu zaštitu strmih litica.</p>
+            <div class="faq-item__answer">
+              <p>Da, Asenovo Kale je lokalitet sa ostacima srednjovekovne tvrđave, što mu daje dodatnu kulturno-istorijsku vrednost. Tvrđava je služila kao odbrambeno utvrđenje koje je koristilo prirodnu zaštitu strmih litica.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Šta još posetiti u blizini Asenovog Kaleta?</summary>
-            <p>U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), kanjon reke Jerme, manastir Poganovo iz 14. veka, i manastiri Sukovo i Temska. Moguće je planinarenje po Vlaškoj i Staroj planini.</p>
+            <div class="faq-item__answer">
+              <p>U blizini se nalaze bazeni Zvonačke Banje sa termomineralnom vodom (28°C), kanjon reke Jerme, manastir Poganovo iz 14. veka, i manastiri Sukovo i Temska. Moguće je planinarenje po Vlaškoj i Staroj planini.</p>
+            </div>
           </details>
           <details class="faq-item">
             <summary>Da li je Asenovo Kale pogodno za početnike?</summary>
-            <p>Uspon na Asenovo Kale zahteva određenu fizičku kondiciju jer staza prolazi kroz strm teren. Nije preporučljivo za potpune početnike ili malu decu. Iskusni planinari će uživati u izazovu i spektakularnom pogledu sa vrha.</p>
+            <div class="faq-item__answer">
+              <p>Uspon na Asenovo Kale zahteva određenu fizičku kondiciju jer staza prolazi kroz strm teren. Nije preporučljivo za potpune početnike ili malu decu. Iskusni planinari će uživati u izazovu i spektakularnom pogledu sa vrha.</p>
+            </div>
           </details>
         </div>
       </div>
@@ -284,6 +300,8 @@ import Footer from "../components/Footer.astro";
   .attraction-content__image {
     position: relative;
     width: 100%;
+    max-width: 52em;
+    margin-inline: auto;
     border-radius: 0.75em;
     overflow: hidden;
     aspect-ratio: 16/9;
@@ -368,10 +386,10 @@ import Footer from "../components/Footer.astro";
   }
 
   .attraction-faq__inner > h2 {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     color: var(--color-heading);
     margin-bottom: 2em;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.3;
   }
 
@@ -407,13 +425,17 @@ import Footer from "../components/Footer.astro";
 
   .faq-item summary::after {
     content: "+";
-    font-size: 1.25em;
+    font-size: 1.75em;
     color: var(--color-accent);
     flex-shrink: 0;
   }
 
   .faq-item[open] summary::after {
     content: "−";
+  }
+
+  .faq-item__answer {
+    overflow: hidden;
   }
 
   .faq-item p {
